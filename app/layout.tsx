@@ -25,25 +25,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dockfoundation.org'),
+  metadataBase: new URL('https://civicknowledge.org'),
   title: {
-    default: 'Dock Foundation | Small Acts. Big Change.',
-    template: '%s | Dock Foundation',
+    default: 'Civic Knowledge | Small Acts. Big Change.',
+    template: '%s | Civic Knowledge',
   },
   description:
-    'Dock Foundation is a non-profit organization working in education, healthcare, livelihoods, women empowerment and environment across India.',
-  keywords: ['NGO', 'non-profit', 'education', 'healthcare', 'India', 'foundation'],
+    'Civic Knowledge is an NGO-focused digital platform that showcases civic engagement initiatives, governance knowledge, public policy awareness, democratic participation, and citizen empowerment programs.',
+  keywords: ['NGO', 'non-profit', 'civic engagement', 'governance', 'public policy', 'democracy', 'citizen empowerment', 'India'],
   openGraph: {
     type: 'website',
-    siteName: 'Dock Foundation',
-    title: 'Dock Foundation | Small Acts. Big Change.',
+    siteName: 'Civic Knowledge',
+    title: 'Civic Knowledge | Small Acts. Big Change.',
     description:
-      'Empowering communities across India through education, healthcare, livelihoods and environment programs.',
+      'Empowering citizens and showcasing governance and public policy initiatives across India.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dock Foundation | Small Acts. Big Change.',
-    description: 'Empowering communities across India through education, healthcare, livelihoods and environment programs.',
+    title: 'Civic Knowledge | Small Acts. Big Change.',
+    description: 'Empowering citizens and showcasing governance and public policy initiatives across India.',
   },
   icons: {
     icon: [{ url: '/CIVIC-KNOWLEDGE.png', type: 'image/png' }],
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body
         suppressHydrationWarning
-        className="min-h-screen flex flex-col bg-white font-sans text-secondary selection:bg-primary selection:text-white"
+        className="min-h-screen flex flex-col bg-white font-sans text-black selection:bg-primary selection:text-white"
       >
         <a
           href="#main-content"

@@ -13,7 +13,7 @@ export default function Testimonials() {
           <h2 className="mt-4 text-3xl font-heading font-bold tracking-tight text-secondary sm:text-4xl">
             Voices of our community
           </h2>
-          <p className="mt-4 leading-relaxed text-secondary/65">
+          <p className="mt-4 leading-relaxed text-slate-600">
             Partners and community members on what working with us feels like.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Testimonials() {
             >
               <span className="text-5xl font-extrabold leading-none text-primary/40" aria-hidden="true">&ldquo;</span>
               <blockquote className="flex-1">
-                <p className="leading-relaxed text-secondary/75">{t.quote}</p>
+                <p className="leading-relaxed text-slate-700">{t.quote}</p>
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-4 border-t border-slate-100 pt-5">
                 <span className="relative h-12 w-12 overflow-hidden rounded-full">
@@ -34,7 +34,7 @@ export default function Testimonials() {
                 </span>
                 <span>
                   <span className="block font-bold text-secondary">{t.name}</span>
-                  <span className="block text-xs font-medium text-secondary/55">{t.role}</span>
+                  <span className="block text-xs font-medium text-slate-500">{t.role}</span>
                 </span>
               </figcaption>
             </figure>

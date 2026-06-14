@@ -11,11 +11,11 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-primary text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Logo src="/CIVIC-KNOWLEDGE.png" width={252} height={123} textColor="white" />
           <p className="mt-5 text-sm leading-relaxed text-white/75">
-            Working alongside communities to create lasting change in education, health, livelihood and the environment.
+            An NGO-focused digital platform showcasing civic engagement, public policy awareness, democratic participation, and citizen empowerment.
           </p>
           <ul className="mt-6 flex gap-3">
             {socials.map((social) => (
@@ -39,9 +39,8 @@ export default function Footer() {
           <ul className="mt-5 space-y-2.5 text-sm text-white/85">
             <li><Link href="/about" className="transition hover:text-tertiary">About Us</Link></li>
             <li><Link href="/programs" className="transition hover:text-tertiary">Our Work</Link></li>
+            <li><Link href="/impact" className="transition hover:text-tertiary">Impact</Link></li>
             <li><Link href="/news" className="transition hover:text-tertiary">News &amp; Stories</Link></li>
-            <li><Link href="/get-involved" className="transition hover:text-tertiary">Get Involved</Link></li>
-            <li><Link href="/donate" className="transition hover:text-tertiary">Donate</Link></li>
             <li><Link href="/contact" className="transition hover:text-tertiary">Contact</Link></li>
           </ul>
         </nav>
@@ -51,32 +50,14 @@ export default function Footer() {
           <ul className="mt-5 space-y-2.5 text-sm text-white/85">
             <li>Regus, Level 4, Kothari Centrum, Kondapur, Hyderabad 500084, India</li>
             <li><a href="tel:+911234567890" className="transition hover:text-tertiary">+91 12345 67890</a></li>
-            <li><a href="mailto:contactus@dockfoundation.org" className="transition hover:text-tertiary">contactus@dockfoundation.org</a></li>
+            <li><a href="mailto:contactus@civicknowledge.org" className="transition hover:text-tertiary">contactus@civicknowledge.org</a></li>
           </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Newsletter</h2>
-          <p className="mt-5 text-sm text-white/75">Get monthly impact updates straight to your inbox.</p>
-          <form className="mt-5 flex gap-2" aria-label="Newsletter signup">
-            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
-            <input
-              id="newsletter-email"
-              type="email"
-              required
-              placeholder="Your email"
-              className="w-full rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-white/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary"
-            />
-            <button type="submit" className="rounded-full bg-tertiary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-tertiary/90">
-              Join
-            </button>
-          </form>
         </div>
       </div>
 
       <div className="border-t border-white/15 py-6">
         <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-white/65">
-          © {new Date().getFullYear()} Dock Foundation. All rights reserved. · Registered non-profit organization · 80G certified
+          © 2023 - {new Date().getFullYear()} Civic Knowledge. All rights reserved. · Registered non-profit · since 2023
         </p>
       </div>
     </footer>

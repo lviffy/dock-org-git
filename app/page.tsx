@@ -51,7 +51,7 @@ export default function HomePage() {
 
       <SuccessStory />
 
-      <Testimonials />
+      {/* <Testimonials /> */}
       <PartnerStrip />
 
       <section className="bg-white py-14 md:py-20 lg:py-28 border-t border-slate-50">
@@ -61,7 +61,7 @@ export default function HomePage() {
             title="Latest from the field"
             subtitle="Real stories of resilience, hope and change from the communities we serve."
           />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {stories.map((story, i) => (
               <Reveal key={story.slug} delay={i * 100} className="h-full">
                 <NewsCard story={story} />

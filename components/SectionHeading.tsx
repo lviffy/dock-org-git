@@ -16,7 +16,7 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = 'cent
         </p>
       )}
       <h2 className="mt-4 text-3xl font-heading font-bold tracking-tight text-secondary sm:text-4xl">{title}</h2>
-      {subtitle && <p className="mt-4 leading-relaxed text-secondary/65">{subtitle}</p>}
+      {subtitle && <p className="mt-4 leading-relaxed text-slate-600">{subtitle}</p>}
     </div>
   );
 }

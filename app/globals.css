@@ -13,7 +13,7 @@
   --color-neutral: #F8F9FA;         /* Off-white — soft surfaces */
 
   --color-background: #ffffff;
-  --color-foreground: #0f172a;
+  --color-foreground: #000000;
 }
 
 @layer base {
@@ -54,7 +54,7 @@
 .values-card:hover .values-spotlight { opacity: 1; }
 .values-card:hover .values-topbar { opacity: 1; }
 .values-card:hover .values-icon-wrap {
-  transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.1);
 }
 .values-card:hover .values-bottom-line {
   transform: scaleX(1);

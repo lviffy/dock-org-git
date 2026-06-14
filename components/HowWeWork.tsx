@@ -64,7 +64,7 @@ export default function HowWeWork() {
               How we turn small acts into lasting change.
             </h2>
           </div>
-          <p className="text-[1.05rem] md:text-[1.12rem] leading-8 text-secondary/70 max-w-2xl">
+          <p className="text-[1.05rem] md:text-[1.12rem] leading-8 text-slate-700 max-w-2xl">
             Inspired by the rigour of strategic consulting and the patience of grassroots work, our
             four-stage model ensures every rupee, every visit and every partnership produces
             measurable, community-owned impact.
@@ -77,8 +77,6 @@ export default function HowWeWork() {
               key={step.n}
               className="group values-card relative flex flex-col rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:border-primary/40"
             >
-              <span className="values-topbar absolute left-0 top-0 h-[3px] w-0 rounded-t-2xl bg-primary transition-all duration-500 group-hover:w-full" />
-
               <div className="values-icon-wrap flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300">
                 <step.Icon className="h-6 w-6" strokeWidth={1.6} />
               </div>
@@ -89,11 +87,11 @@ export default function HowWeWork() {
               <h3 className="mt-2 text-[1.2rem] font-heading font-semibold leading-snug tracking-tight text-secondary">
                 {step.title}
               </h3>
-              <p className="mt-3 text-[0.95rem] leading-[1.8] text-secondary/70">{step.body}</p>
+              <p className="mt-3 text-[0.95rem] leading-[1.8] text-slate-600">{step.body}</p>
 
               <ul className="mt-5 space-y-2 border-t border-slate-100 pt-4">
                 {step.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[0.85rem] leading-[1.55] text-secondary/70">
+                  <li key={b} className="flex items-start gap-2 text-[0.85rem] leading-[1.55] text-slate-600">
                     <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {b}
                   </li>
@@ -104,9 +102,12 @@ export default function HowWeWork() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-          <p className="text-[0.95rem] leading-7 text-secondary/70 max-w-xl">
-            Want to see the model in action? Read the latest independent impact audit or partner with
-            us on a program.
+          <p className="text-[0.95rem] leading-7 text-slate-600 max-w-xl">
+            Want to see the model in action? Read the latest{' '}
+            <Link href="/impact" className="text-primary font-semibold hover:underline">
+              independent impact audit
+            </Link>{' '}
+            or partner with us on a program.
           </p>
           <Link
             href="/contact"

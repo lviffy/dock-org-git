@@ -12,28 +12,28 @@ const values = [
   { title: 'Sustainability', text: 'We build programs that outlast us, owned and led by the community.', Icon: Compass },
 ];
 
-const team = [
-  { name: 'Asha Verma', role: 'Founder & Director', image: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=300&h=300&q=80' },
-  { name: 'Rohit Menon', role: 'Head of Programs', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80' },
-  { name: 'Sneha Kulkarni', role: 'Community Outreach Lead', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&h=300&q=80' },
-  { name: 'Imran Shaikh', role: 'Partnerships & Fundraising', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&h=300&q=80' },
-];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-primary py-20 text-white md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-white/75 mb-6">
-            About Dock Foundation
+      <section className="relative overflow-hidden bg-primary py-20 text-white md:py-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-25"
+          style={{
+            background:
+              'radial-gradient(60% 50% at 80% 20%, rgba(46,91,154,0.55) 0%, rgba(2,6,54,0) 60%)',
+          }}
+        />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-tertiary mb-6">
+            About Civic Knowledge
           </p>
-          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.04] tracking-tight font-medium">
+          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.05] tracking-tight font-heading font-bold max-w-4xl">
             Who we are
           </h1>
-          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-white/85">
-            Dock Foundation is a registered non-profit organization committed to building equitable,
-            resilient communities. For over 3 years, we have worked at the grassroots, listening first,
-            then acting alongside the people we serve.
+          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-white/80">
+            Civic Knowledge is an NGO-focused digital platform and non-profit organization committed to promoting civic engagement, public policy awareness, and citizen empowerment across India.
           </p>
         </div>
       </section>
@@ -114,22 +114,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-14 md:py-20 lg:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Our Team" title="People behind the mission" />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full">
-                  <Image src={member.image} alt={member.name} fill className="object-cover" sizes="160px" />
-                </div>
-                <h3 className="mt-4 font-bold text-[#0D1524]">{member.name}</h3>
-                <p className="text-sm text-slate-500">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }

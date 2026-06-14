@@ -20,7 +20,7 @@ export default function ProgramCard({ program }: { program: Program }) {
           Focus Area
         </p>
         <h3 className="text-xl font-heading font-bold tracking-tight text-secondary">{program.title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-secondary/70">{program.summary}</p>
+        <p className="mt-3 text-sm leading-relaxed text-slate-600">{program.summary}</p>
         <Link
           href="/programs"
           className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-primary hover:text-secondary transition-colors"

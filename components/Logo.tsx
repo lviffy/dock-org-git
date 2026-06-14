@@ -36,7 +36,7 @@ export default function Logo({
     <span className={`flex items-center gap-2.5 ${className}`}>
       <Image
         src={src}
-        alt="Dock Foundation logo"
+        alt="Civic Knowledge logo"
         width={width}
         height={height}
         className="object-contain"
@@ -45,7 +45,7 @@ export default function Logo({
       />
       {showWordmark && (
         <span className={`text-lg font-heading font-bold tracking-tight ${wordmarkColor}`}>
-          Dock <span className={accentColor}>Foundation</span>
+          Civic <span className={accentColor}>Knowledge</span>
         </span>
       )}
     </span>

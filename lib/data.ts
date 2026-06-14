@@ -12,6 +12,7 @@ export type Story = {
   excerpt: string;
   image: string;
   category: string;
+  externalUrl?: string;
 };
 
 export type Testimonial = {
@@ -101,24 +102,44 @@ export const stories: Story[] = [
     category: 'Healthcare',
   },
   {
-    slug: 'women-shg-success',
-    title: 'Self-help groups help 500 women start micro-businesses',
-    date: '2026-04-22',
+    slug: 'political-shake-up-puducherry-hans-india',
+    title: 'Political Shake-Up in Puducherry: LJK and Dock Alliance Sets Precedent',
+    date: '2026-04-12',
     excerpt:
-      'From tailoring units to organic farming collectives, women entrepreneurs are rewriting the story of their villages.',
-    // Smiling woman entrepreneur
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&h=500&q=80',
-    category: 'Livelihood',
+      'Coverage on the Puducherry political realignment and the LJK-Dock consulting alliance model for structured campaigns.',
+    image: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'News Report',
+    externalUrl: 'https://www.thehansindia.com/politics/political-shake-up-in-puducherry-ljk-and-dock-consulting-alliance-sets-a-new-precedent-1057542',
   },
   {
-    slug: 'green-drive',
-    title: '1 lakh saplings planted in the Green Future drive',
-    date: '2026-04-05',
+    slug: 'six-month-surge-dravidan-times',
+    title: 'Six-Month Surge Shapes New Puducherry Alliance',
+    date: '2026-03-25',
     excerpt:
-      'Schools and local panchayats joined hands for one of our largest community plantation campaigns yet.',
-    // Lush green forest canopy
-    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&h=500&q=80',
-    category: 'Environment',
+      'A report on six-month momentum and the operational campaign framework behind the Puducherry alliance.',
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'News Report',
+    externalUrl: 'https://dravidantimes.com/national-news/six-month-surge-shapes-new-puducherry-alliance/29866/',
+  },
+  {
+    slug: 'code-cadre-control-the-week',
+    title: 'Code, Cadre and Control: Inside the System Powering Puducherry’s Rise',
+    date: '2026-03-21',
+    excerpt:
+      'Business-wire update discussing systems, discipline, and organisational mechanics behind the new political surge.',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'Wire Feed',
+    externalUrl: 'https://www.theweek.in/wire-updates/business/2026/03/21/code-cadre-and-control-inside-the-system-powering-puducherry%E2%80%99s-newest-political-rise.html',
+  },
+  {
+    slug: 'jagan-party-building-advisor-great-andhra',
+    title: 'Is Jagan Right in Appointing Mohan as Party-Building Advisor?',
+    date: '2024-11-05',
+    excerpt:
+      'Commentary discussing advisor appointment decisions and organisational strategy in Andhra politics.',
+    image: 'https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'Opinion & Analysis',
+    externalUrl: 'https://www.greatandhra.com/movies/news/is-jagan-right-in-appointing-mohan-as-his-party-building-advisor-154310',
   },
 ];
 

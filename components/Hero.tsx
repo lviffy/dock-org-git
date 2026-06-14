@@ -1,8 +1,52 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+const translations = {
+  en: {
+    eyebrow: 'Registered non-profit · since 2023',
+    titleMain: 'Small acts. ',
+    titleItalic: 'Big change.',
+    description: "Since 2023, we've partnered with communities across India to deliver lasting change in education, healthcare, livelihoods and the environment. One village, one family, one child at a time.",
+    exploreBtn: 'Explore Our Work',
+    contactBtn: 'Get in Touch',
+    statCommunities: 'Communities served',
+    statLives: 'Lives impacted',
+    statYears: 'Years of service',
+  },
+  te: {
+    eyebrow: 'రిజిస్టర్డ్ నాన్-ప్రాఫిట్ · 2023 నుండి',
+    titleMain: 'చిన్న సహాయాలు. ',
+    titleItalic: 'పెద్ద మార్పులు.',
+    description: '2023 నుండి, మేము భారతదేశంలోని అనేక ప్రాంతాలలో విద్య, వైద్యం, ఉపాధి మరియు పర్యావరణ రంగాలలో శాశ్వత మార్పును తీసుకురావడానికి కమ్యూనిటీలతో కలిసి పని చేస్తున్నాము. ప్రతి గ్రామం, ప్రతి కుటుంబం, ప్రతి బిడ్డకు అండగా.',
+    exploreBtn: 'కార్యక్రమాలను చూడండి',
+    contactBtn: 'సంప్రదించండి',
+    statCommunities: 'కమ్యూనిటీలు',
+    statLives: 'లబ్ధిదారులు',
+    statYears: 'సేవా సంవత్సరాలు',
+  },
+};
+
 export default function Hero() {
+  const [lang, setLang] = useState<'en' | 'te'>('en');
+
+  useEffect(() => {
+    const syncLang = () => {
+      const storedLang = localStorage.getItem('civic_lang');
+      if (storedLang === 'en' || storedLang === 'te') {
+        setLang(storedLang);
+      }
+    };
+    syncLang();
+    window.addEventListener('civic_lang_change', syncLang);
+    return () => window.removeEventListener('civic_lang_change', syncLang);
+  }, []);
+
+  const t = translations[lang];
+
   return (
     <section className="relative overflow-hidden bg-primary text-white">
       {/* Soft white radial highlight to add depth */}
@@ -18,15 +62,14 @@ export default function Hero() {
         <div>
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.32em] text-tertiary mb-4 flex items-center gap-2.5">
             <span className="inline-block w-6 h-[1.5px] bg-tertiary opacity-80" />
-            Registered non-profit · 3 years of impact
+            {t.eyebrow}
           </p>
           <h1 className="text-4xl sm:text-5xl xl:text-6xl font-heading font-bold leading-[1.05] tracking-tight text-white break-words">
-            Small acts. <br />
-            <span className="text-tertiary italic drop-shadow-sm">Big change.</span>
+            {t.titleMain} <br />
+            <span className="text-tertiary italic drop-shadow-sm">{t.titleItalic}</span>
           </h1>
           <p className="mt-8 max-w-xl text-[15px] leading-[1.75] text-white/80">
-            For over 3 years, we've partnered with communities across India to deliver lasting change in
-            education, healthcare, livelihoods and the environment. One village, one family, one child at a time.
+            {t.description}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -34,7 +77,7 @@ export default function Hero() {
               href="/programs"
               className="inline-flex items-center gap-3 bg-tertiary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-colors shadow-sm group"
             >
-              Explore Our Work
+              {t.exploreBtn}
               <span className="flex items-center justify-center bg-secondary text-white rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-3 h-3 stroke-[2.5]" />
               </span>
@@ -43,7 +86,7 @@ export default function Hero() {
               href="/contact"
               className="inline-flex items-center justify-between gap-8 border border-white/25 rounded-full pl-6 pr-4 py-2.5 text-xs font-medium text-white hover:bg-white/10 transition-colors"
             >
-              Get in Touch
+              {t.contactBtn}
               <span className="bg-white/10 p-1.5 rounded-full">
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
@@ -52,15 +95,15 @@ export default function Hero() {
 
           <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-6">
             <div>
-              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">Communities served</dt>
+              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statCommunities}</dt>
               <dd className="mt-1 text-2xl font-heading font-bold text-white">120+</dd>
             </div>
             <div>
-              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">Lives impacted</dt>
+              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statLives}</dt>
               <dd className="mt-1 text-2xl font-heading font-bold text-white">45,000+</dd>
             </div>
             <div>
-              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">Years of service</dt>
+              <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statYears}</dt>
               <dd className="mt-1 text-2xl font-heading font-bold text-white">3</dd>
             </div>
           </dl>

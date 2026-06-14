@@ -39,7 +39,7 @@ export default function MissionVision() {
               They need <span className="italic text-primary font-light">partners</span>.
             </h3>
 
-            <p className="mt-6 max-w-2xl text-[0.95rem] md:text-[1.05rem] leading-[1.75] md:leading-[1.8] text-secondary/70">
+            <p className="mt-6 max-w-2xl text-[0.95rem] md:text-[1.05rem] leading-[1.75] md:leading-[1.8] text-slate-700">
               Our mission is to empower underserved communities through quality education, accessible
               healthcare, dignified livelihoods and a healthy environment. Our vision is a world where every
               person, regardless of where they are born, has the opportunity to live a healthy, educated and
@@ -50,7 +50,7 @@ export default function MissionVision() {
               <div className="absolute top-0 right-0 w-32 h-32 -mr-12 -mt-12 rounded-full border border-primary/15 group-hover:scale-[1.8] transition-transform duration-1000 ease-in-out" />
               <div className="absolute top-0 right-0 w-44 h-44 -mr-16 -mt-16 rounded-full border border-primary/10 group-hover:scale-[1.8] transition-transform duration-1000 delay-75 ease-in-out" />
               <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary">Why This Matters</p>
-              <p className="mt-3 md:mt-4 max-w-2xl text-[0.92rem] md:text-[1rem] leading-[1.7] md:leading-[1.8] text-secondary/75">
+              <p className="mt-3 md:mt-4 max-w-2xl text-[0.92rem] md:text-[1rem] leading-[1.7] md:leading-[1.8] text-slate-700">
                 When communities lead, change sticks. Every program we run is shaped alongside the people
                 it serves — schools, clinics, livelihoods and ecosystems built to outlast us.
               </p>
@@ -73,7 +73,7 @@ export default function MissionVision() {
                     </div>
                     <div>
                       <h4 className="font-heading text-[1.05rem] sm:text-[1.15rem] md:text-[1.25rem] font-normal tracking-wide text-secondary group-hover:text-primary transition-colors duration-300">{point.title}</h4>
-                      <p className="mt-1.5 sm:mt-2 text-[0.9rem] md:text-[0.95rem] leading-[1.6] md:leading-[1.7] text-secondary/65">{point.description}</p>
+                      <p className="mt-1.5 sm:mt-2 text-[0.9rem] md:text-[0.95rem] leading-[1.6] md:leading-[1.7] text-slate-600">{point.description}</p>
                     </div>
                   </div>
                 ))}

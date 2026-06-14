@@ -19,8 +19,8 @@ const contactDetails = [
   {
     Icon: MailIcon,
     label: 'Email',
-    value: 'contactus@dockfoundation.org',
-    href: 'mailto:contactus@dockfoundation.org',
+    value: 'contactus@civicknowledge.org',
+    href: 'mailto:contactus@civicknowledge.org',
   },
   {
     Icon: ClockIcon,
