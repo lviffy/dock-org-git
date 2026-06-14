@@ -24,8 +24,8 @@ export type Testimonial = {
 export const stats = [
   { value: 120, suffix: '+', label: 'Communities reached' },
   { value: 45000, suffix: '+', label: 'Lives impacted' },
-  { value: 800, suffix: '+', label: 'Active volunteers' },
-  { value: 15, suffix: '', label: 'Years of service' },
+  { value: 800, suffix: '+', label: 'Volunteers engaged' },
+  { value: 3, suffix: '', label: 'Years of service' },
 ];
 
 export const programs: Program[] = [
@@ -74,7 +74,7 @@ export const programs: Program[] = [
     title: 'Disaster Relief & Response',
     summary:
       'Rapid-response relief kits, shelter support and long-term rehabilitation for families affected by disasters.',
-    // Volunteers packing donation/relief boxes
+    // Relief boxes being prepared for distribution
     image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&h=600&q=80',
   },
 ];
@@ -115,7 +115,7 @@ export const stories: Story[] = [
     title: '1 lakh saplings planted in the Green Future drive',
     date: '2026-04-05',
     excerpt:
-      'Volunteers, schools and local panchayats joined hands for one of our largest community plantation campaigns yet.',
+      'Schools and local panchayats joined hands for one of our largest community plantation campaigns yet.',
     // Lush green forest canopy
     image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&h=500&q=80',
     category: 'Environment',
@@ -137,17 +137,10 @@ export const successStory = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Transparent, grounded and genuinely community-first. Every rupee we contributed came back to us as a measurable, documented outcome.',
+      'Transparent, grounded and genuinely community-first. Every program partnership we have run with the foundation has produced measurable, documented outcomes.',
     name: 'Ananya Rao',
     role: 'CSR Head, Corporate Partner',
     image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&h=120&q=80',
-  },
-  {
-    quote:
-      'Volunteering with the foundation changed how I see my own city. The team makes it incredibly easy to contribute meaningfully.',
-    name: 'Kabir Singh',
-    role: 'Volunteer since 2022',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80',
   },
   {
     quote:
@@ -160,27 +153,4 @@ export const testimonials: Testimonial[] = [
 
 export const partners = [
   'WHO', 'UNESCO', 'UNICEF', 'Smile Foundation', 'Oxfam', 'Save the Children', 'CARE', 'ActionAid', 'World Vision', 'Plan International',
-];
-
-export const donationTiers = [
-  {
-    amount: 500,
-    title: 'Supporter',
-    description: 'Provides school supplies for one child for a month.',
-  },
-  {
-    amount: 1500,
-    title: 'Champion',
-    description: 'Funds a health check-up camp consultation for five families.',
-  },
-  {
-    amount: 5000,
-    title: 'Changemaker',
-    description: 'Sponsors vocational training for one woman entrepreneur.',
-  },
-  {
-    amount: 10000,
-    title: 'Guardian',
-    description: 'Supports a digital classroom for an entire village school.',
-  },
 ];

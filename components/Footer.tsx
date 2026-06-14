@@ -10,11 +10,11 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy-dark text-white">
-      <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-primary text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo onDark />
-          <p className="mt-5 text-sm leading-relaxed text-white/65">
+          <Logo src="/CIVIC-KNOWLEDGE.png" width={252} height={123} textColor="white" />
+          <p className="mt-5 text-sm leading-relaxed text-white/75">
             Working alongside communities to create lasting change in education, health, livelihood and the environment.
           </p>
           <ul className="mt-6 flex gap-3">
@@ -23,7 +23,7 @@ export default function Footer() {
                 <a
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors duration-300 hover:bg-brand-orange hover:text-brand-navy"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors duration-300 hover:bg-tertiary hover:text-white"
                 >
                   <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={social.icon} />
@@ -35,29 +35,29 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Quick links">
-          <h2 className="text-sm font-extrabold uppercase tracking-widest text-brand-orange">Quick Links</h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
-            <li><Link href="/about" className="transition hover:text-brand-orange">About Us</Link></li>
-            <li><Link href="/programs" className="transition hover:text-brand-orange">Our Work</Link></li>
-            <li><Link href="/news" className="transition hover:text-brand-orange">News &amp; Stories</Link></li>
-            <li><Link href="/get-involved" className="transition hover:text-brand-orange">Get Involved</Link></li>
-            <li><Link href="/donate" className="transition hover:text-brand-orange">Donate</Link></li>
-            <li><Link href="/contact" className="transition hover:text-brand-orange">Contact</Link></li>
+          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Quick Links</h2>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/85">
+            <li><Link href="/about" className="transition hover:text-tertiary">About Us</Link></li>
+            <li><Link href="/programs" className="transition hover:text-tertiary">Our Work</Link></li>
+            <li><Link href="/news" className="transition hover:text-tertiary">News &amp; Stories</Link></li>
+            <li><Link href="/get-involved" className="transition hover:text-tertiary">Get Involved</Link></li>
+            <li><Link href="/donate" className="transition hover:text-tertiary">Donate</Link></li>
+            <li><Link href="/contact" className="transition hover:text-tertiary">Contact</Link></li>
           </ul>
         </nav>
 
         <div>
-          <h2 className="text-sm font-extrabold uppercase tracking-widest text-brand-orange">Contact</h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
+          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Contact</h2>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/85">
             <li>Regus, Level 4, Kothari Centrum, Kondapur, Hyderabad 500084, India</li>
-            <li><a href="tel:+911234567890" className="transition hover:text-brand-orange">+91 12345 67890</a></li>
-            <li><a href="mailto:contactus@dockconsulting.in" className="transition hover:text-brand-orange">contactus@dockconsulting.in</a></li>
+            <li><a href="tel:+911234567890" className="transition hover:text-tertiary">+91 12345 67890</a></li>
+            <li><a href="mailto:contactus@dockfoundation.org" className="transition hover:text-tertiary">contactus@dockfoundation.org</a></li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-sm font-extrabold uppercase tracking-widest text-brand-orange">Newsletter</h2>
-          <p className="mt-5 text-sm text-white/65">Get monthly impact updates straight to your inbox.</p>
+          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Newsletter</h2>
+          <p className="mt-5 text-sm text-white/75">Get monthly impact updates straight to your inbox.</p>
           <form className="mt-5 flex gap-2" aria-label="Newsletter signup">
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
@@ -65,17 +65,17 @@ export default function Footer() {
               type="email"
               required
               placeholder="Your email"
-              className="w-full rounded-full border-0 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-white/45 focus:ring-2 focus:ring-brand-orange"
+              className="w-full rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-white/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary"
             />
-            <button type="submit" className="rounded-full bg-brand-orange px-5 py-2.5 text-sm font-bold text-brand-navy transition-colors hover:bg-brand-orange-dark">
+            <button type="submit" className="rounded-full bg-tertiary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-tertiary/90">
               Join
             </button>
           </form>
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-6">
-        <p className="container-site text-center text-xs text-white/55">
+      <div className="border-t border-white/15 py-6">
+        <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-white/65">
           © {new Date().getFullYear()} Dock Foundation. All rights reserved. · Registered non-profit organization · 80G certified
         </p>
       </div>

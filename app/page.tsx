@@ -2,17 +2,15 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import ImpactStats from '@/components/ImpactStats';
 import MissionVision from '@/components/MissionVision';
+import HowWeWork from '@/components/HowWeWork';
 import ProgramCard from '@/components/ProgramCard';
 import SuccessStory from '@/components/SuccessStory';
-import DonationWidget from '@/components/DonationWidget';
 import Testimonials from '@/components/Testimonials';
-import VolunteerCTA from '@/components/VolunteerCTA';
 import PartnerStrip from '@/components/PartnerStrip';
 import NewsCard from '@/components/NewsCard';
-import DonateBanner from '@/components/DonateBanner';
 import SectionHeading from '@/components/SectionHeading';
 import Reveal from '@/components/Reveal';
-import { ArrowRightIcon, CheckIcon } from '@/components/icons';
+import { ArrowRight } from 'lucide-react';
 import { programs, stories } from '@/lib/data';
 
 export default function HomePage() {
@@ -21,10 +19,10 @@ export default function HomePage() {
       <Hero />
       <ImpactStats />
       <MissionVision />
+      <HowWeWork />
 
-      {/* Programs */}
-      <section className="bg-brand-sand py-24">
-        <div className="container-site">
+      <section className="bg-white py-14 md:py-20 lg:py-28 border-t border-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Work"
             title="Causes we champion"
@@ -38,8 +36,14 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/programs" className="btn-primary">
-              Explore All Programs <ArrowRightIcon className="text-base" />
+            <Link
+              href="/programs"
+              className="inline-flex items-center gap-3 bg-primary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-primary/90 transition-colors shadow-sm group"
+            >
+              Explore All Programs
+              <span className="flex items-center justify-center bg-white text-primary rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
+                <ArrowRight className="w-3 h-3 stroke-[2.5]" />
+              </span>
             </Link>
           </div>
         </div>
@@ -47,44 +51,11 @@ export default function HomePage() {
 
       <SuccessStory />
 
-      {/* Donation */}
-      <section className="py-24">
-        <div className="container-site grid items-center gap-14 lg:grid-cols-2">
-          <Reveal>
-            <p className="eyebrow">Donate</p>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-              Generosity that <span className="text-brand-orange-dark">goes further</span>
-            </h2>
-            <p className="mt-5 max-w-lg leading-relaxed text-slate-600">
-              100% of your donation funds programs on the ground. Administrative costs are covered
-              separately by institutional grants, so your generosity reaches the people who need it most.
-            </p>
-            <ul className="mt-8 space-y-4">
-              {[
-                'Audited annual reports, published openly',
-                'Quarterly impact updates for every donor',
-                '80G tax exemption on all donations',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-700">
-                  <CheckIcon className="mt-0.5 shrink-0 text-lg text-brand-orange-dark" />
-                  <span className="font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal delay={150}>
-            <DonationWidget />
-          </Reveal>
-        </div>
-      </section>
-
       <Testimonials />
-      <VolunteerCTA />
       <PartnerStrip />
 
-      {/* News */}
-      <section className="bg-brand-sand py-24">
-        <div className="container-site">
+      <section className="bg-white py-14 md:py-20 lg:py-28 border-t border-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="News & Stories"
             title="Latest from the field"
@@ -98,14 +69,18 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/news" className="btn-ghost">
-              View all news &amp; stories <ArrowRightIcon className="text-base" />
+            <Link
+              href="/news"
+              className="inline-flex items-center gap-3 rounded-full border border-slate-200 px-5 py-2.5 text-[11px] font-bold tracking-[0.14em] uppercase text-secondary transition-colors duration-300 hover:border-primary hover:text-primary group"
+            >
+              View all news &amp; stories
+              <span className="flex items-center justify-center bg-primary/10 text-primary rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
+                <ArrowRight className="w-3 h-3 stroke-[2.5]" />
+              </span>
             </Link>
           </div>
         </div>
       </section>
-
-      <DonateBanner />
     </>
   );
 }

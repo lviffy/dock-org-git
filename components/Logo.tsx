@@ -3,35 +3,51 @@ import Image from 'next/image';
 /**
  * Brand logo — single source of truth for the site logo (used in Header & Footer).
  *
- * Icon artwork lives at `/public/dock-logo.webp`. Replace that file (same
- * filename) to update the logo everywhere, including the favicon.
+ * Icon artwork lives at `/public/civiclogo.png`. Replace that file
+ * (same filename) to update the logo everywhere, including the favicon.
  *
- * Set `onDark` when rendering on a dark background (e.g. the footer) to switch
- * the wordmark to white; the default is navy for light backgrounds.
+ * - `showWordmark` adds the "Dock Foundation" wordmark next to the mark.
+ *   Used in the footer (set `textColor="white"` for dark backgrounds).
+ * - Default (no wordmark) is used in the navbar header.
  */
+type TextColor = 'dark' | 'white';
+
 type Props = {
   className?: string;
-  onDark?: boolean;
+  showWordmark?: boolean;
+  textColor?: TextColor;
+  width?: number;
+  height?: number;
+  src?: string;
 };
 
-export default function Logo({ className = '', onDark = false }: Props) {
+export default function Logo({
+  className = '',
+  showWordmark = false,
+  textColor = 'dark',
+  width = 168,
+  height = 77,
+  src = '/civiclogo.png',
+}: Props) {
+  const wordmarkColor = textColor === 'white' ? 'text-white' : 'text-black';
+  const accentColor = textColor === 'white' ? 'text-tertiary' : 'text-black';
+
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
       <Image
-        src="/dock-logo.webp"
-        alt=""
-        aria-hidden="true"
-        width={36}
-        height={36}
-        className="h-9 w-9 object-contain"
+        src={src}
+        alt="Dock Foundation logo"
+        width={width}
+        height={height}
+        className="object-contain"
+        style={{ height: `${height}px`, width: `${width}px` }}
         priority
       />
-      <span
-        className={`text-lg font-extrabold tracking-tight ${onDark ? 'text-white' : 'text-brand-navy'}`}
-      >
-        Dock{' '}
-        <span className={onDark ? 'text-brand-orange' : 'text-brand-orange-dark'}>Foundation</span>
-      </span>
+      {showWordmark && (
+        <span className={`text-lg font-heading font-bold tracking-tight ${wordmarkColor}`}>
+          Dock <span className={accentColor}>Foundation</span>
+        </span>
+      )}
     </span>
   );
 }
