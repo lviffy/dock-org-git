@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     description: 'Empowering citizens and showcasing governance and public policy initiatives across India.',
   },
   icons: {
-    icon: [{ url: '/CIVIC-KNOWLEDGE.png', type: 'image/png' }],
-    shortcut: '/CIVIC-KNOWLEDGE.png',
-    apple: '/CIVIC-KNOWLEDGE.png',
+    icon: [{ url: '/CIVIC-KNOWLEDGE-jpg-transparent.png', type: 'image/png' }],
+    shortcut: '/CIVIC-KNOWLEDGE-jpg-transparent.png',
+    apple: '/CIVIC-KNOWLEDGE-jpg-transparent.png',
   },
   robots: { index: true, follow: true },
 };

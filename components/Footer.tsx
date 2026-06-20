@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Logo from '@/components/Logo';
 
 const socials = [
@@ -13,7 +14,15 @@ export default function Footer() {
     <footer className="bg-primary text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-3">
         <div>
-          <Logo src="/CIVIC-KNOWLEDGE.png" width={252} height={123} textColor="white" />
+          <Image
+            src="/CIVIC-KNOWLEDGE-jpg-transparent.png"
+            alt="Civic Knowledge logo"
+            width={252}
+            height={110}
+            className="object-contain -ml-[10px]"
+            style={{ height: '110px', width: '252px' }}
+            priority
+          />
           <p className="mt-5 text-sm leading-relaxed text-white/75">
             An NGO-focused digital platform showcasing civic engagement, public policy awareness, democratic participation, and citizen empowerment.
           </p>

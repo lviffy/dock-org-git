@@ -48,8 +48,6 @@
 }
 .values-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px -15px rgba(43, 104, 184, 0.18),
-    0 4px 16px -4px rgba(43, 104, 184, 0.10);
 }
 .values-card:hover .values-spotlight { opacity: 1; }
 .values-card:hover .values-topbar { opacity: 1; }
