@@ -1,6 +1,5 @@
-import { Search, Users, Cpu, HeartHandshake } from 'lucide-react';
+import { Search, Users, Cpu, HeartHandshake, CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
 const steps = [
   {
@@ -75,25 +74,32 @@ export default function HowWeWork() {
           {steps.map((step) => (
             <div
               key={step.n}
-              className="group values-card relative flex flex-col rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:border-primary/40"
+              className="group relative flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:border-slate-200/80 hover:shadow-[0_20px_50px_rgba(13,21,36,0.06)] min-h-[360px]"
             >
-              <div className="values-icon-wrap flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300">
-                <step.Icon className="h-6 w-6" strokeWidth={1.6} />
+              {/* Watermark Step Number */}
+              <span className="absolute right-6 top-5 text-6xl font-heading font-black tracking-tight text-slate-100/70 group-hover:text-primary/10 transition-colors duration-500 select-none pointer-events-none">
+                {step.n}
+              </span>
+
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-600 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                  <step.Icon className="h-5.5 w-5.5" strokeWidth={1.5} />
+                </div>
+
+                <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60">
+                  Step {step.n}
+                </p>
+                <h3 className="mt-1.5 text-[1.2rem] font-heading font-bold leading-snug tracking-tight text-secondary">
+                  {step.title}
+                </h3>
+                <p className="mt-3.5 text-[0.925rem] leading-[1.75] text-slate-600">{step.body}</p>
               </div>
 
-              <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-                Step {step.n}
-              </p>
-              <h3 className="mt-2 text-[1.2rem] font-heading font-semibold leading-snug tracking-tight text-secondary">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-[0.95rem] leading-[1.8] text-slate-600">{step.body}</p>
-
-              <ul className="mt-5 space-y-2 border-t border-slate-100 pt-4">
+              <ul className="mt-6 space-y-2.5 border-t border-slate-100/80 pt-5">
                 {step.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[0.85rem] leading-[1.55] text-slate-600">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    {b}
+                  <li key={b} className="flex items-start gap-2 text-[0.82rem] leading-normal text-slate-600">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                    <span>{b}</span>
                   </li>
                 ))}
               </ul>

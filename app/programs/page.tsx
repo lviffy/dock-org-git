@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import ProgramCard from '@/components/ProgramCard';
+import FeaturedConclave from '@/components/FeaturedConclave';
 import { programs } from '@/lib/data';
 
 export const metadata: Metadata = { title: 'Our Work' };
@@ -30,6 +31,9 @@ export default function ProgramsPage() {
         </div>
       </section>
 
+      {/* Featured Project Showcase */}
+      <FeaturedConclave />
+
       <section className="bg-neutral py-14 md:py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -47,3 +51,4 @@ export default function ProgramsPage() {
     </>
   );
 }
+

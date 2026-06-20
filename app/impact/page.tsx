@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { projects, impactMetrics, executionLens, Project } from '@/lib/data/impact-content';
 import SectionHeading from '@/components/SectionHeading';
@@ -23,6 +23,19 @@ import {
 
 export default function ImpactPage() {
   const [activeTab, setActiveTab] = useState(projects[0].id);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hashId = window.location.hash.substring(1);
+      if (projects.some((p) => p.id === hashId)) {
+        setActiveTab(hashId);
+        // Scroll to tab switcher or header
+        const el = document.getElementById('project-showcase');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   const activeProject = projects.find((p) => p.id === activeTab) || projects[0];
 
   return (
@@ -68,7 +81,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Project Switcher Navigation */}
-      <section className="bg-slate-50/50 border-b border-slate-100 sticky top-[88px] z-40 backdrop-blur-md">
+      <section id="project-showcase" className="bg-slate-50/50 border-b border-slate-100 sticky top-[88px] z-40 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-2 py-4 scrollbar-none">
             {projects.map((project) => {
