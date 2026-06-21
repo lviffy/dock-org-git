@@ -18,11 +18,30 @@ import {
   Cpu, 
   ChevronRight,
   Send,
-  Calendar
+  Calendar,
+  ChevronDown
 } from 'lucide-react';
 
 export default function ImpactPage() {
   const [activeTab, setActiveTab] = useState(projects[0].id);
+
+  // Accordion states
+  const [openConstituencies, setOpenConstituencies] = useState<Record<string, boolean>>({ 'const-0': true });
+  const [openPillars, setOpenPillars] = useState<Record<string, boolean>>({ 'pillar-0': true });
+  const [openSprintPlan, setOpenSprintPlan] = useState(false);
+  const [openTracks, setOpenTracks] = useState(false);
+  const [openChallenges, setOpenChallenges] = useState(false);
+  const [openArchitecture, setOpenArchitecture] = useState(false);
+
+  useEffect(() => {
+    // Reset accordions when active project tab changes
+    setOpenConstituencies({ 'const-0': true });
+    setOpenPillars({ 'pillar-0': true });
+    setOpenSprintPlan(false);
+    setOpenTracks(false);
+    setOpenChallenges(false);
+    setOpenArchitecture(false);
+  }, [activeTab]);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash) {
@@ -168,35 +187,55 @@ export default function ImpactPage() {
                   <p className="text-[1.05rem] leading-8 text-slate-700">{activeProject.context}</p>
 
                   <div className="grid gap-6 md:grid-cols-2 mt-6">
-                    <div className="rounded-2xl border border-slate-100 p-6 bg-slate-50/20">
-                      <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-secondary mb-4">
-                        <AlertCircle className="h-4 w-4 text-primary shrink-0" />
-                        Key Challenges
-                      </h4>
-                      <ul className="space-y-3">
-                        {activeProject.challenges.map((c, idx) => (
-                          <li key={idx} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                            {c}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {activeProject.commandArchitecture && (
-                      <div className="rounded-2xl border border-slate-100 p-6 bg-slate-50/20">
-                        <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-secondary mb-4">
-                          <Layers className="h-4 w-4 text-primary shrink-0" />
-                          Command Architecture
+                    <div className="rounded-2xl border border-slate-100 bg-[#FAFBFD] overflow-hidden">
+                      <button
+                        onClick={() => setOpenChallenges(!openChallenges)}
+                        className="w-full flex items-center justify-between text-left p-6 md:pointer-events-none focus:outline-none group/challenges"
+                      >
+                        <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-secondary group-hover/challenges:text-primary transition-colors md:group-hover/challenges:text-secondary">
+                          <AlertCircle className="h-4 w-4 text-primary shrink-0" />
+                          Key Challenges
                         </h4>
+                        <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${openChallenges ? 'rotate-180' : ''}`}>
+                          <ChevronDown className="h-3 w-3" />
+                        </div>
+                      </button>
+                      <div className={`transition-all duration-300 overflow-hidden md:max-h-[1000px] md:opacity-100 md:block ${openChallenges ? 'max-h-[500px] opacity-100 p-6 pt-0' : 'max-h-0 opacity-0 md:p-6 md:pt-0'}`}>
                         <ul className="space-y-3">
-                          {activeProject.commandArchitecture.map((arch, idx) => (
+                          {activeProject.challenges.map((c, idx) => (
                             <li key={idx} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
                               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                              {arch}
+                              {c}
                             </li>
                           ))}
                         </ul>
+                      </div>
+                    </div>
+
+                    {activeProject.commandArchitecture && (
+                      <div className="rounded-2xl border border-slate-100 bg-[#FAFBFD] overflow-hidden">
+                        <button
+                          onClick={() => setOpenArchitecture(!openArchitecture)}
+                          className="w-full flex items-center justify-between text-left p-6 md:pointer-events-none focus:outline-none group/architecture"
+                        >
+                          <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-secondary group-hover/architecture:text-primary transition-colors md:group-hover/architecture:text-secondary">
+                            <Layers className="h-4 w-4 text-primary shrink-0" />
+                            Command Architecture
+                          </h4>
+                          <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${openArchitecture ? 'rotate-180' : ''}`}>
+                            <ChevronDown className="h-3 w-3" />
+                          </div>
+                        </button>
+                        <div className={`transition-all duration-300 overflow-hidden md:max-h-[1000px] md:opacity-100 md:block ${openArchitecture ? 'max-h-[500px] opacity-100 p-6 pt-0' : 'max-h-0 opacity-0 md:p-6 md:pt-0'}`}>
+                          <ul className="space-y-3">
+                            {activeProject.commandArchitecture.map((arch, idx) => (
+                              <li key={idx} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                                {arch}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -210,79 +249,103 @@ export default function ImpactPage() {
                       <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Constituency Execution</h3>
                     </div>
 
-                    <div className="space-y-8">
-                      {activeProject.subConstituencies.map((sub, idx) => (
-                        <div key={idx} className="rounded-2xl border border-slate-100 p-6 md:p-8 space-y-6 hover:border-primary/20 transition-all duration-300">
-                          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-slate-100 pb-4">
-                            <div>
-                              <h4 className="text-lg font-heading font-bold text-secondary">{sub.name}</h4>
-                              <p className="text-xs text-primary font-bold uppercase tracking-wider mt-1">{sub.slogan}</p>
-                            </div>
-                            <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
-                              <CheckCircle2 className="h-3.5 w-3.5" />
-                              Outcome Achieved
-                            </span>
-                          </div>
-
-                          <div className="grid gap-6 md:grid-cols-2">
-                            <div>
-                              <h5 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Strategy & Action</h5>
-                              <ul className="space-y-2">
-                                {sub.strategy.map((item, idy) => (
-                                  <li key={idy} className="flex gap-2 text-sm text-slate-600">
-                                    <ChevronRight className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                                    {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {sub.diagnostics && (
+                    <div className="space-y-6">
+                      {activeProject.subConstituencies.map((sub, idx) => {
+                        const key = `const-${idx}`;
+                        const isOpen = !!openConstituencies[key];
+                        return (
+                          <div key={idx} className="rounded-2xl border border-slate-100 overflow-hidden bg-white hover:border-primary/20 transition-all duration-300 shadow-[0_2px_15px_rgba(13,21,36,0.01)]">
+                            <button
+                              onClick={() => setOpenConstituencies(prev => ({ ...prev, [key]: !prev[key] }))}
+                              className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 focus:outline-none group/constituency"
+                            >
                               <div>
-                                <h5 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Diagnostics & Control</h5>
-                                <ul className="space-y-2">
-                                  {sub.diagnostics.map((item, idy) => (
-                                    <li key={idy} className="flex gap-2 text-sm text-slate-600">
-                                      <ChevronRight className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
+                                <h4 className="text-lg font-heading font-bold text-secondary group-hover/constituency:text-primary transition-colors">{sub.name}</h4>
+                                <p className="text-xs text-primary font-bold uppercase tracking-wider mt-1">{sub.slogan}</p>
                               </div>
-                            )}
-                          </div>
+                              <div className="flex items-center gap-3 shrink-0">
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
+                                  <CheckCircle2 className="h-3.5 w-3.5" />
+                                  Outcome Achieved
+                                </span>
+                                <div className={`h-8 w-8 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-slate-50 ${isOpen ? 'rotate-180' : ''}`}>
+                                  <ChevronDown className="h-4 w-4" />
+                                </div>
+                              </div>
+                            </button>
 
-                          <div className="rounded-xl bg-slate-50/50 p-4 border border-slate-100">
-                            <p className="text-sm font-semibold text-secondary">Constituency Result:</p>
-                            <p className="text-sm text-slate-700 mt-1">{sub.outcome}</p>
+                            <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-[1500px] border-t border-slate-100 p-6 md:p-8 bg-slate-50/20' : 'max-h-0'}`}>
+                              <div className="grid gap-6 md:grid-cols-2 mb-6">
+                                <div>
+                                  <h5 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Strategy &amp; Action</h5>
+                                  <ul className="space-y-2">
+                                    {sub.strategy.map((item, idy) => (
+                                      <li key={idy} className="flex gap-2 text-sm text-slate-600">
+                                        <ChevronRight className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+
+                                {sub.diagnostics && (
+                                  <div>
+                                    <h5 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Diagnostics &amp; Control</h5>
+                                    <ul className="space-y-2">
+                                      {sub.diagnostics.map((item, idy) => (
+                                        <li key={idy} className="flex gap-2 text-sm text-slate-600">
+                                          <ChevronRight className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                                          {item}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="rounded-xl bg-white p-4 border border-slate-100">
+                                <p className="text-sm font-semibold text-secondary">Constituency Result:</p>
+                                <p className="text-sm text-slate-700 mt-1">{sub.outcome}</p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 )}
 
                 {/* Tracks / Phases (For YSRCP and Puducherry) */}
                 {activeProject.tracks && (
-                  <div className="space-y-8">
-                    <div className="flex items-center gap-3">
-                      <span className="h-[2px] w-8 bg-primary" />
-                      <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Strategic Tracks & Phases</h3>
-                    </div>
+                  <div className="space-y-6">
+                    <button
+                      onClick={() => setOpenTracks(!openTracks)}
+                      className="w-full flex items-center justify-between text-left md:pointer-events-none focus:outline-none group/tracks"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="h-[2px] w-8 bg-primary" />
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-primary group-hover/tracks:text-primary transition-colors md:group-hover/tracks:text-slate-400">Strategic Tracks &amp; Phases</h3>
+                      </div>
+                      <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${openTracks ? 'rotate-180' : ''}`}>
+                        <ChevronDown className="h-3 w-3" />
+                      </div>
+                    </button>
 
-                    <div className="relative border-l border-slate-100 pl-6 ml-3 space-y-8">
-                      {activeProject.tracks.map((track, idx) => (
-                        <div key={idx} className="relative group">
-                          {/* Dot marker */}
-                          <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-primary/40 bg-white text-primary group-hover:scale-125 transition-transform duration-300">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                          </span>
-                          <h4 className="text-base font-bold text-secondary group-hover:text-primary transition-colors duration-300">
-                            {track.title}
-                          </h4>
-                          <p className="mt-2 text-sm leading-relaxed text-slate-600">{track.detail}</p>
-                        </div>
-                      ))}
+                    <div className={`transition-all duration-300 overflow-hidden md:max-h-[2500px] md:opacity-100 md:block ${openTracks ? 'max-h-[1500px] opacity-100 pt-2' : 'max-h-0 opacity-0'}`}>
+                      <div className="relative border-l border-slate-100 pl-6 ml-3 space-y-8">
+                        {activeProject.tracks.map((track, idx) => (
+                          <div key={idx} className="relative group">
+                            {/* Dot marker */}
+                            <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-primary/40 bg-white text-primary group-hover:scale-125 transition-transform duration-300">
+                              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            </span>
+                            <h4 className="text-base font-bold text-secondary group-hover:text-primary transition-colors duration-300">
+                              {track.title}
+                            </h4>
+                            <p className="mt-2 text-sm leading-relaxed text-slate-600">{track.detail}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -322,24 +385,39 @@ export default function ImpactPage() {
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-3">
-                      {activeProject.pillars.map((pillar, idx) => (
-                        <div key={idx} className="rounded-2xl border border-slate-100 p-5 bg-slate-50/10 hover:shadow-md transition-shadow">
-                          <h4 className="text-sm font-bold text-secondary mb-3 flex items-center gap-2">
-                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-[10px]">
-                              {idx + 1}
-                            </span>
-                            {pillar.title}
-                          </h4>
-                          <ul className="space-y-2">
-                            {pillar.bullets.map((b, idy) => (
-                              <li key={idy} className="flex gap-2 text-xs leading-relaxed text-slate-600">
-                                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                                {b}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                      {activeProject.pillars.map((pillar, idx) => {
+                        const key = `pillar-${idx}`;
+                        const isOpen = !!openPillars[key];
+                        return (
+                          <div key={idx} className="rounded-2xl border border-slate-100 bg-[#FAFBFD] md:bg-slate-50/10 md:p-5 hover:shadow-md transition-all duration-300 overflow-hidden">
+                            <button
+                              onClick={() => setOpenPillars(prev => ({ ...prev, [key]: !prev[key] }))}
+                              className="w-full flex items-center justify-between text-left p-5 md:p-0 md:pointer-events-none focus:outline-none group/pillar"
+                            >
+                              <h4 className="text-sm font-bold text-secondary flex items-center gap-2 group-hover/pillar:text-primary transition-colors md:group-hover/pillar:text-secondary">
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-[10px] shrink-0">
+                                  {idx + 1}
+                                </span>
+                                {pillar.title}
+                              </h4>
+                              <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${isOpen ? 'rotate-180' : ''}`}>
+                                <ChevronDown className="h-3 w-3" />
+                              </div>
+                            </button>
+
+                            <div className={`transition-all duration-300 overflow-hidden md:max-h-[1000px] md:opacity-100 md:block ${isOpen ? 'max-h-[500px] opacity-100 p-5 pt-0 md:p-0 md:mt-3' : 'max-h-0 opacity-0 md:mt-3'}`}>
+                              <ul className="space-y-2">
+                                {pillar.bullets.map((b, idy) => (
+                                  <li key={idy} className="flex gap-2 text-xs leading-relaxed text-slate-600">
+                                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                    {b}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -347,24 +425,34 @@ export default function ImpactPage() {
                 {/* Sprint Plan (For Graduate MLC) */}
                 {activeProject.sprintPlan && (
                   <div className="space-y-6 border-t border-slate-100 pt-8">
-                    <div className="flex items-center gap-3">
-                      <span className="h-[2px] w-8 bg-primary" />
-                      <h3 className="text-xs font-bold uppercase tracking-widest text-primary">30-Day Sprint Execution</h3>
-                    </div>
+                    <button
+                      onClick={() => setOpenSprintPlan(!openSprintPlan)}
+                      className="w-full flex items-center justify-between text-left md:pointer-events-none focus:outline-none group/sprint"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="h-[2px] w-8 bg-primary" />
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-primary group-hover/sprint:text-primary transition-colors md:group-hover/sprint:text-slate-400">30-Day Sprint Execution</h3>
+                      </div>
+                      <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${openSprintPlan ? 'rotate-180' : ''}`}>
+                        <ChevronDown className="h-3 w-3" />
+                      </div>
+                    </button>
 
-                    <div className="space-y-4">
-                      {activeProject.sprintPlan.map((sprint, idx) => (
-                        <div key={idx} className="grid md:grid-cols-[140px_1fr] gap-3 items-start border border-slate-100 rounded-xl p-4 bg-slate-50/20">
-                          <div className="flex items-center gap-2 shrink-0">
-                            <Calendar className="h-4 w-4 text-primary" />
-                            <span className="text-sm font-bold text-secondary uppercase tracking-wider">{sprint.timeline}</span>
+                    <div className={`transition-all duration-300 overflow-hidden md:max-h-[2500px] md:opacity-100 md:block ${openSprintPlan ? 'max-h-[1500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div className="space-y-4 mt-2 md:mt-0">
+                        {activeProject.sprintPlan.map((sprint, idx) => (
+                          <div key={idx} className="grid md:grid-cols-[140px_1fr] gap-3 items-start border border-slate-100 rounded-xl p-4 bg-slate-50/20">
+                            <div className="flex items-center gap-2 shrink-0">
+                              <Calendar className="h-4 w-4 text-primary" />
+                              <span className="text-sm font-bold text-secondary uppercase tracking-wider">{sprint.timeline}</span>
+                            </div>
+                            <div>
+                              <h4 className="text-sm font-semibold text-secondary">{sprint.objective}</h4>
+                              <p className="text-xs text-slate-600 mt-1 leading-relaxed">{sprint.details}</p>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="text-sm font-semibold text-secondary">{sprint.objective}</h4>
-                            <p className="text-xs text-slate-600 mt-1 leading-relaxed">{sprint.details}</p>
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
 
                     {activeProject.adaptation && (
@@ -401,13 +489,44 @@ export default function ImpactPage() {
             subtitle="Dock Consulting applies these principles systematically to convert political complexity into strategic clarity."
           />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Mobile view: slidable to the sides */}
+          <div
+            className="mt-10 -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 sm:hidden"
+            aria-label="Execution anchors — swipe to explore"
+          >
+            {executionLens.map((lens, i) => {
+              const icons = [Cpu, Settings, Activity, Layers];
+              const Icon = icons[i % icons.length];
+              return (
+                <div
+                  key={lens.title}
+                  className="group relative flex shrink-0 w-[78vw] snap-start flex-col rounded-2xl border border-slate-100 bg-white p-6 min-h-[220px]"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5.5 w-5.5" strokeWidth={1.6} />
+                  </div>
+                  <h3 className="mt-5 text-[1.1rem] font-heading font-semibold leading-snug text-secondary">
+                    {lens.title}
+                  </h3>
+                  <p className="mt-2.5 text-xs leading-relaxed text-slate-600">
+                    {lens.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-2 text-center text-[10px] text-slate-400 uppercase tracking-wider sm:hidden">
+            Swipe to explore execution anchors →
+          </p>
+
+          {/* Desktop/Tablet view: grid */}
+          <div className="hidden sm:grid mt-14 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {executionLens.map((lens, i) => {
               const icons = [Cpu, Settings, Activity, Layers];
               const Icon = icons[i % icons.length];
               return (
                 <Reveal key={lens.title} delay={i * 120}>
-                  <div className="group relative flex flex-col rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:shadow-md h-full">
+                  <div className="group relative flex flex-col rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 h-full">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
                       <Icon className="h-6 w-6" strokeWidth={1.6} />
                     </div>

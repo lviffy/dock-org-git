@@ -1,37 +1,9 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
-import { ShieldCheck, Compass, Sparkles, BookOpen, Layers } from 'lucide-react';
+import CommitmentsSection from '@/components/CommitmentsSection';
 
 export const metadata: Metadata = { title: 'About Us' };
-
-const commitments = [
-  {
-    title: 'Institutional Clarity',
-    text: 'Ensuring public life is process-driven rather than personality-driven, focusing on administrative design.',
-    Icon: ShieldCheck,
-  },
-  {
-    title: 'Democratic Integrity',
-    text: 'Preserving procedural democracy and structural rules of governance at all levels.',
-    Icon: Compass,
-  },
-  {
-    title: 'Merit-Based Leadership',
-    text: 'Fostering leaders with a deep understanding of legislative, administrative, and fiscal systems.',
-    Icon: Sparkles,
-  },
-  {
-    title: 'Structural Thinking',
-    text: 'Prioritizing legislative procedure, administrative design, fiscal architecture, and constitutional limitation.',
-    Icon: Layers,
-  },
-  {
-    title: 'Credibility Before Scale',
-    text: 'Prioritizing depth, serious research, and process replication over visibility or rapid growth.',
-    Icon: BookOpen,
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -109,26 +81,7 @@ export default function AboutPage() {
               We hold ourselves to disciplined, rigorous benchmarks, putting credibility and structural clarity before scale. Growth remains calibrated.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {commitments.map((item) => (
-              <div
-                key={item.title}
-                className="group bg-white border border-[#E4E8F0] rounded-2xl p-7 flex flex-col justify-between hover:shadow-md transition-shadow duration-300 min-h-[220px]"
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#F0F4FF] border border-[#D8E0F0] flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300">
-                  <item.Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
-                </div>
-                <div className="mt-5">
-                  <h3 className="text-[1.15rem] font-bold tracking-tight text-[#0D1524] leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-[0.9rem] leading-[1.7] text-[#445166]">
-                    {item.text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CommitmentsSection />
         </div>
       </section>
 

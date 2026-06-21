@@ -14,7 +14,8 @@ import {
   Calendar,
   MapPin,
   MessageSquare,
-  Trophy
+  Trophy,
+  ChevronDown
 } from 'lucide-react';
 
 const motions = {
@@ -62,6 +63,12 @@ const evaluationCriteria = [
 
 export default function ProgramsPage() {
   const [activeTab, setActiveTab] = useState<'conclave' | 'debate'>('conclave');
+  const [openMotions, setOpenMotions] = useState<Record<string, boolean>>({});
+  const [resultsOpen, setResultsOpen] = useState(false);
+
+  const toggleMotion = (key: string) => {
+    setOpenMotions(prev => ({ ...prev, [key]: !prev[key] }));
+  };
 
   return (
     <>
@@ -166,16 +173,30 @@ export default function ProgramsPage() {
                         <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
                         Governance &amp; Politics
                       </h4>
-                      <ul className="space-y-4">
-                        {motions.governance.map((motion, idx) => (
-                          <li key={idx} className="border-b border-slate-100/60 pb-3 last:border-0 last:pb-0">
-                            <p className="text-sm font-semibold text-secondary">{motion.title}</p>
-                            <p className="text-xs text-slate-400 mt-1">{motion.alt}</p>
-                            <p className="text-[11px] leading-relaxed text-slate-500 mt-2 bg-white/80 p-2 rounded border border-slate-100/50 italic">
-                              &ldquo;{motion.insight}&rdquo;
-                            </p>
-                          </li>
-                        ))}
+                      <ul className="space-y-3">
+                        {motions.governance.map((motion, idx) => {
+                          const key = `gov-${idx}`;
+                          const isOpen = !!openMotions[key];
+                          return (
+                            <li key={idx} className="border-b border-slate-100/60 pb-3 last:border-0 last:pb-0">
+                              <button
+                                onClick={() => toggleMotion(key)}
+                                className="w-full flex items-center justify-between text-left py-1 focus:outline-none group/btn"
+                              >
+                                <div>
+                                  <p className="text-sm font-semibold text-secondary group-hover/btn:text-primary transition-colors">{motion.title}</p>
+                                  <p className="text-xs text-slate-400 mt-0.5">{motion.alt}</p>
+                                </div>
+                                <ChevronDown className={`h-4 w-4 text-slate-400 shrink-0 transition-transform duration-250 ml-2 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                              </button>
+                              <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                                <p className="text-[11px] leading-relaxed text-slate-500 bg-white p-3 rounded border border-slate-100/80 italic shadow-sm">
+                                  &ldquo;{motion.insight}&rdquo;
+                                </p>
+                              </div>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
 
@@ -184,16 +205,30 @@ export default function ProgramsPage() {
                         <Tv className="h-4 w-4 text-primary shrink-0" />
                         Technology &amp; Rights
                       </h4>
-                      <ul className="space-y-4">
-                        {motions.technology.map((motion, idx) => (
-                          <li key={idx}>
-                            <p className="text-sm font-semibold text-secondary">{motion.title}</p>
-                            <p className="text-xs text-slate-400 mt-1">{motion.alt}</p>
-                            <p className="text-[11px] leading-relaxed text-slate-500 mt-2 bg-white/80 p-2 rounded border border-slate-100/50 italic">
-                              &ldquo;{motion.insight}&rdquo;
-                            </p>
-                          </li>
-                        ))}
+                      <ul className="space-y-3">
+                        {motions.technology.map((motion, idx) => {
+                          const key = `tech-${idx}`;
+                          const isOpen = !!openMotions[key];
+                          return (
+                            <li key={idx} className="border-b border-slate-100/60 pb-3 last:border-0 last:pb-0">
+                              <button
+                                onClick={() => toggleMotion(key)}
+                                className="w-full flex items-center justify-between text-left py-1 focus:outline-none group/btn"
+                              >
+                                <div>
+                                  <p className="text-sm font-semibold text-secondary group-hover/btn:text-primary transition-colors">{motion.title}</p>
+                                  <p className="text-xs text-slate-400 mt-0.5">{motion.alt}</p>
+                                </div>
+                                <ChevronDown className={`h-4 w-4 text-slate-400 shrink-0 transition-transform duration-250 ml-2 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                              </button>
+                              <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                                <p className="text-[11px] leading-relaxed text-slate-500 bg-white p-3 rounded border border-slate-100/80 italic shadow-sm">
+                                  &ldquo;{motion.insight}&rdquo;
+                                </p>
+                              </div>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
@@ -204,13 +239,21 @@ export default function ProgramsPage() {
               <div className="space-y-8 lg:sticky lg:top-28">
                 <div className="rounded-3xl border border-slate-100 bg-[#FAFBFD] p-6 md:p-8 space-y-6">
                   {/* Results Header */}
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-1.5">
+                  <button
+                    onClick={() => setResultsOpen(!resultsOpen)}
+                    className="w-full flex items-center justify-between text-left md:pointer-events-none focus:outline-none group/header"
+                  >
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-1.5 group-hover/header:text-primary transition-colors md:group-hover/header:text-slate-400">
                       <Trophy className="h-3.5 w-3.5 text-primary" />
-                      Debate Results &amp; Recognition
+                      Debate Results &amp; Feedback
                     </h3>
-                    
-                    <div className="space-y-4">
+                    <div className={`md:hidden h-6 w-6 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-white ${resultsOpen ? 'rotate-180' : ''}`}>
+                      <ChevronDown className="h-3 w-3" />
+                    </div>
+                  </button>
+                  
+                  <div className={`transition-all duration-300 overflow-hidden md:max-h-[2500px] md:opacity-100 md:block ${resultsOpen ? 'max-h-[1500px] opacity-100 space-y-6' : 'max-h-0 opacity-0 md:space-y-6'}`}>
+                    <div className="space-y-4 mt-2 md:mt-0">
                       <div className="bg-white border border-slate-100 rounded-xl p-4 shadow-sm flex items-center gap-4">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary">
                           <Trophy className="h-5 w-5" />
@@ -233,39 +276,39 @@ export default function ProgramsPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Participation Badge */}
-                  <div className="border-t border-slate-100 pt-6">
-                    <div className="rounded-xl bg-slate-50 p-4 border border-slate-100 flex items-start gap-2.5">
-                      <Award className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
-                      <p className="text-[11px] leading-relaxed text-slate-500">
-                        A <span className="font-semibold text-secondary">Certificate of Participation</span> was awarded to all student debaters from MVIT in recognition of outstanding articulation, critical thinking, and persuasive public speaking.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Quote */}
-                  <div className="border-t border-slate-100 pt-6">
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-1.5">
-                      <MessageSquare className="h-3.5 w-3.5 text-primary" />
-                      Participant Feedback
-                    </h3>
-                    <blockquote className="rounded-2xl bg-white border border-slate-100 p-5 shadow-sm space-y-3 relative">
-                      <span className="absolute right-4 top-2 text-3xl font-serif text-slate-200 leading-none select-none">&ldquo;</span>
-                      <p className="text-xs leading-relaxed text-slate-600 italic">
-                        The debate simulation was an eye-opener. It was not about theatrical rhetoric, but about understanding legislative procedures, administrative design, and budget allocation in practice.
-                      </p>
-                      <div className="flex items-center gap-2.5 pt-2 border-t border-slate-50">
-                        <div className="h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold text-primary font-heading">
-                          SP
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-bold text-secondary leading-none">Student Participant</p>
-                          <p className="text-[9px] text-slate-400 mt-0.5">MVIT Puducherry</p>
-                        </div>
+                    {/* Participation Badge */}
+                    <div className="border-t border-slate-100 pt-6">
+                      <div className="rounded-xl bg-slate-50 p-4 border border-slate-100 flex items-start gap-2.5">
+                        <Award className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
+                        <p className="text-[11px] leading-relaxed text-slate-500">
+                          A <span className="font-semibold text-secondary">Certificate of Participation</span> was awarded to all student debaters from MVIT in recognition of outstanding articulation, critical thinking, and persuasive public speaking.
+                        </p>
                       </div>
-                    </blockquote>
+                    </div>
+
+                    {/* Testimonial Quote */}
+                    <div className="border-t border-slate-100 pt-6">
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-1.5">
+                        <MessageSquare className="h-3.5 w-3.5 text-primary" />
+                        Participant Feedback
+                      </h3>
+                      <blockquote className="rounded-2xl bg-white border border-slate-100 p-5 shadow-sm space-y-3 relative">
+                        <span className="absolute right-4 top-2 text-3xl font-serif text-slate-200 leading-none select-none">&ldquo;</span>
+                        <p className="text-xs leading-relaxed text-slate-600 italic">
+                          The debate simulation was an eye-opener. It was not about theatrical rhetoric, but about understanding legislative procedures, administrative design, and budget allocation in practice.
+                        </p>
+                        <div className="flex items-center gap-2.5 pt-2 border-t border-slate-50">
+                          <div className="h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold text-primary font-heading">
+                            SP
+                          </div>
+                          <div>
+                            <p className="text-[10px] font-bold text-secondary leading-none">Student Participant</p>
+                            <p className="text-[9px] text-slate-400 mt-0.5">MVIT Puducherry</p>
+                          </div>
+                        </div>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               </div>

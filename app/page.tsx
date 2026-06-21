@@ -119,38 +119,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Our Work"
-            title="Causes we champion"
-            subtitle="From classrooms to clinics, from farms to forests, our programs are designed with communities, for communities."
-          />
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {programs.slice(0, 3).map((program, i) => (
-              <Reveal key={program.slug} delay={i * 120}>
-                <ProgramCard program={program} />
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link
-              href="/programs"
-              className="inline-flex items-center gap-3 bg-primary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-primary/90 transition-colors shadow-sm group"
-            >
-              Explore All Programs
-              <span className="flex items-center justify-center bg-white text-primary rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
-                <ArrowRight className="w-3 h-3 stroke-[2.5]" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       <SuccessStory />
 
       {/* <Testimonials /> */}
-      <PartnerStrip />
+      {/* <PartnerStrip /> */}
 
       <section className="bg-white py-14 md:py-20 lg:py-28 border-t border-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
