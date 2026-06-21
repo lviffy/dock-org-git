@@ -78,7 +78,44 @@ export default function HowWeWork() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 justify-center">
+        {/* Mobile: horizontal snap-scroll carousel */}
+        <div
+          className="mt-10 -mx-4 px-4 flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 sm:hidden"
+          aria-label="Our methods — swipe to explore"
+        >
+          {steps.map((step) => (
+            <div
+              key={step.n}
+              className="group relative flex shrink-0 w-[82vw] snap-start flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 min-h-[290px] transition-all duration-300"
+            >
+              <span className="absolute right-5 top-4 text-5xl font-heading font-black tracking-tight text-slate-100/70 select-none pointer-events-none">
+                {step.n}
+              </span>
+              <div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-600">
+                  <step.Icon className="h-5 w-5" strokeWidth={1.5} />
+                </div>
+                <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60">Method {step.n}</p>
+                <h3 className="mt-1.5 text-[1rem] font-heading font-bold leading-snug tracking-tight text-secondary">{step.title}</h3>
+                <p className="mt-3 text-[0.82rem] leading-[1.65] text-slate-600">{step.body}</p>
+              </div>
+              <ul className="mt-4 space-y-2 border-t border-slate-100/80 pt-3.5">
+                {step.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-[0.75rem] leading-normal text-slate-600">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 text-center text-[10px] text-slate-400 uppercase tracking-wider sm:hidden">
+          Swipe to explore all methods →
+        </p>
+
+        {/* sm+: grid */}
+        <div className="hidden sm:grid mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-3 justify-center">
           {steps.map((step) => (
             <div
               key={step.n}

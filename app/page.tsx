@@ -48,10 +48,10 @@ export default function HomePage() {
                 Jointly conducted by DOCK and Manakula Vinayagar Institute of Technology (MVIT), this campus forum provides a structured platform for student leaders to engage with governance, digital rights, and regional policy challenges.
               </p>
             </div>
-            <div className="flex flex-col justify-center items-start lg:items-end">
+            <div className="flex flex-col justify-center items-stretch lg:items-end">
               <Link
                 href="/programs"
-                className="inline-flex items-center gap-3 bg-tertiary text-white px-7 py-3.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-all shadow-md group"
+                className="inline-flex items-center justify-center gap-3 bg-tertiary text-white px-7 py-3.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-all shadow-md group"
               >
                 Explore Forum &amp; Topics
                 <ArrowRight className="w-4 h-4 stroke-[2.5] group-hover:translate-x-1 transition-transform" />
@@ -62,10 +62,22 @@ export default function HomePage() {
       </section>
 
       {/* Featured Case Study Highlight */}
-      <section className="bg-[#FAFBFD] border-t border-b border-slate-100 py-14 md:py-20">
+      <section className="bg-[#FAFBFD] border-t border-b border-slate-100 py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            <div>
+          <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+            {/* Image — shows first on mobile, right side on desktop */}
+            <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-md border border-slate-100 order-first lg:order-last">
+              <Image
+                src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&h=550&q=80"
+                alt="Puducherry political movement case study"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+            </div>
+
+            <div className="order-last lg:order-first">
               <p className="inline-flex items-center gap-2.5 text-[0.65rem] font-bold uppercase tracking-[0.32em] text-tertiary mb-4">
                 <span className="inline-block w-6 h-[1.5px] bg-tertiary opacity-80" />
                 Featured Case Study
@@ -94,7 +106,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <Link
                   href="/impact#puducherry-movement"
-                  className="inline-flex items-center gap-3 bg-primary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-primary/95 transition-all shadow-sm group"
+                  className="inline-flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto bg-primary text-white px-5 py-3 sm:py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-primary/95 transition-all shadow-sm group"
                 >
                   Explore Full Case Study
                   <span className="flex items-center justify-center bg-white/10 text-white rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
@@ -102,17 +114,6 @@ export default function HomePage() {
                   </span>
                 </Link>
               </div>
-            </div>
-            
-            <div className="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-md border border-slate-100">
-              <Image
-                src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&h=550&q=80"
-                alt="Puducherry political movement case study"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
           </div>
         </div>

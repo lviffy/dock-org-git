@@ -58,24 +58,24 @@ export default function Hero() {
             'radial-gradient(60% 50% at 80% 20%, rgba(46,91,154,0.55) 0%, rgba(2,6,54,0) 60%)',
         }}
       />
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid min-h-[78vh] items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid items-center gap-8 pt-12 pb-6 lg:min-h-[78vh] lg:grid-cols-2 lg:gap-12 lg:py-28">
         <div>
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.32em] text-tertiary mb-4 flex items-center gap-2.5">
             <span className="inline-block w-6 h-[1.5px] bg-tertiary opacity-80" />
             {t.eyebrow}
           </p>
-          <h1 className="text-4xl sm:text-5xl xl:text-6xl font-heading font-bold leading-[1.05] tracking-tight text-white break-words">
+          <h1 className="text-[2rem] sm:text-5xl xl:text-6xl font-heading font-bold leading-[1.05] tracking-tight text-white break-words">
             {t.titleMain} <br />
             <span className="text-tertiary italic drop-shadow-sm">{t.titleItalic}</span>
           </h1>
-          <p className="mt-8 max-w-xl text-[15px] leading-[1.75] text-white/80">
+          <p className="mt-5 lg:mt-8 max-w-xl text-[14px] sm:text-[15px] leading-[1.75] text-white/80">
             {t.description}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-7 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link
               href="/programs"
-              className="inline-flex items-center gap-3 bg-tertiary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-colors shadow-sm group"
+              className="inline-flex items-center justify-center sm:justify-start gap-3 bg-tertiary text-white px-5 py-3 sm:py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-colors shadow-sm group"
             >
               {t.exploreBtn}
               <span className="flex items-center justify-center bg-secondary text-white rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
@@ -84,7 +84,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-between gap-8 border border-white/25 rounded-full pl-6 pr-4 py-2.5 text-xs font-medium text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-between gap-6 border border-white/25 rounded-full pl-6 pr-4 py-3 sm:py-2.5 text-xs font-medium text-white hover:bg-white/10 transition-colors"
             >
               {t.contactBtn}
               <span className="bg-white/10 p-1.5 rounded-full">
@@ -93,7 +93,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-6">
+          <dl className="mt-8 sm:mt-12 grid grid-cols-3 sm:flex sm:flex-wrap sm:gap-x-10 gap-y-4 border-t border-white/15 pt-5 sm:pt-6">
             <div>
               <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statCommunities}</dt>
               <dd className="mt-1 text-2xl font-heading font-bold text-white">2 Cr+</dd>
@@ -124,6 +124,23 @@ export default function Hero() {
             <p className="text-sm font-heading font-bold text-white">"Democracy runs on structure."</p>
             <p className="mt-1 text-xs text-white/80">Strengthening understanding of legislative and fiscal design across campuses.</p>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile image strip — visible below hero content on small screens */}
+      <div className="block lg:hidden relative h-52 sm:h-60 overflow-hidden border-t border-white/10">
+        <Image
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=500&q=80"
+          alt="Governance debate and panel"
+          fill
+          className="object-cover object-top"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/20 to-transparent" />
+        <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-secondary/90 backdrop-blur-sm p-3.5 shadow-lg border border-white/10">
+          <p className="text-sm font-heading font-bold text-white">&ldquo;Democracy runs on structure.&rdquo;</p>
+          <p className="mt-0.5 text-[11px] text-white/80">Strengthening civic understanding across campuses.</p>
         </div>
       </div>
     </section>

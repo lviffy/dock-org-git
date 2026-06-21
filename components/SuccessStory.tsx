@@ -5,14 +5,26 @@ import { successStory } from '@/lib/data';
 
 export default function SuccessStory() {
   return (
-    <section className="bg-primary py-20 md:py-28 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-14 lg:grid-cols-2 lg:items-center">
+    <section className="bg-primary py-16 md:py-28 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 lg:gap-14 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.32em] text-tertiary mb-4 flex items-center gap-2.5">
             <span className="inline-block w-6 h-[1.5px] bg-tertiary opacity-80" />
             Featured Initiative
           </p>
           <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight">{successStory.title}</h2>
+
+          {/* Mobile image — shown below title on small screens */}
+          <div className="relative mt-6 h-48 sm:h-56 rounded-2xl overflow-hidden border border-white/15 lg:hidden">
+            <Image
+              src={successStory.image}
+              alt={successStory.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 0px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
+          </div>
           <blockquote className="mt-8 border-l-4 border-tertiary pl-6">
             <p className="text-xl font-heading font-light italic leading-relaxed text-white/90">
               &ldquo;{successStory.quote}&rdquo;
