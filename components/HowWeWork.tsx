@@ -1,45 +1,55 @@
-import { Search, Users, Cpu, HeartHandshake, CheckCircle2, ArrowRight } from 'lucide-react';
+import { BookOpen, Users, Award, FileText, Briefcase, CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const steps = [
   {
     n: '01',
-    Icon: Search,
-    title: 'Listen & Research',
-    body: 'We start on the ground — surveys, focus groups and ward-level data — to understand the real problem before designing a single intervention.',
+    Icon: BookOpen,
+    title: 'Institutional Literacy',
+    body: 'Understanding how laws are drafted, committees function, budgets are shaped, and authority is exercised — in practice.',
     bullets: [
-      '1,200+ community conversations a year',
-      'Vulnerability and need-mapping at district level',
+      'Focus on real-world mechanics',
+      'Bridging gaps in civic knowledge',
     ],
   },
   {
     n: '02',
     Icon: Users,
-    title: 'Co-Design with Communities',
-    body: 'No program is delivered to a community — it is designed with them. Local panchayats, women\'s collectives and youth shape every plan.',
+    title: 'Governance Simulations',
+    body: 'A high-intensity replication of legislative and fiscal processes where participants draft proposals, allocate budgets, and navigate review.',
     bullets: [
-      'Active village committees in 120+ locations',
-      'Women-led self-help groups in every program',
+      'Process replication, not theater',
+      'Hands-on legislative drafting',
     ],
   },
   {
     n: '03',
-    Icon: Cpu,
-    title: 'Tech-Enabled Execution',
-    body: 'Digital classrooms, mobile health vans, geo-tagged field reports and AI-driven outreach ensure the right help reaches the right family.',
+    Icon: Award,
+    title: 'Civic Leadership Fellowship',
+    body: 'An annual, limited-cohort program focused on governance immersion, institutional negotiation, crisis simulation, and policy drafting.',
     bullets: [
-      'Geo-tagged monitoring for every project',
-      'WhatsApp helplines, biometrics & dashboards',
+      'High-impact cohort structure',
+      'Depth and rigor over scale',
     ],
   },
   {
     n: '04',
-    Icon: HeartHandshake,
-    title: 'Measure, Learn, Sustain',
-    body: 'Outcomes are tracked quarterly, learnings are published and successful models are transitioned to the community for long-term ownership.',
+    Icon: FileText,
+    title: 'Roundtables & Briefs',
+    body: 'Curated thematic dialogues producing documented, publicly archived briefs and working notes on critical policy issues.',
     bullets: [
-      'Independent third-party impact audits',
-      'Community-owned programs within 3–5 years',
+      'Documented working notes',
+      'Publicly accessible archives',
+    ],
+  },
+  {
+    n: '05',
+    Icon: Briefcase,
+    title: 'Institutional Advisory',
+    body: 'Ongoing collaboration with administrators, academics, and practitioners to ensure seriousness and grounded perspective.',
+    bullets: [
+      'Academic & practical alignment',
+      'Action-oriented output review',
     ],
   },
 ];
@@ -56,25 +66,23 @@ export default function HowWeWork() {
                 <span className="h-[1px] w-8 bg-gradient-to-r from-primary to-transparent" />
               </div>
               <p className="text-[0.65rem] font-bold uppercase tracking-[0.32em] text-primary">
-                Our Approach
+                How We Operate
               </p>
             </div>
             <h2 className="font-heading text-[2rem] md:text-[2.8rem] leading-[1.08] tracking-tight font-medium text-secondary">
-              How we turn small acts into lasting change.
+              Repeatable, disciplined institutional interventions.
             </h2>
           </div>
           <p className="text-[1.05rem] md:text-[1.12rem] leading-8 text-slate-700 max-w-2xl">
-            Inspired by the rigour of strategic consulting and the patience of grassroots work, our
-            four-stage model ensures every rupee, every visit and every partnership produces
-            measurable, community-owned impact.
+            We focus on process replication, constitutional clarity, and structural literacy. Every initiative we undertake generates documented output and aims for a long-term cultural shift in public life.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 justify-center">
           {steps.map((step) => (
             <div
               key={step.n}
-              className="group relative flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:border-slate-200/80 hover:shadow-[0_20px_50px_rgba(13,21,36,0.06)] min-h-[360px]"
+              className="group relative flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:border-slate-200/80 hover:shadow-[0_20px_50px_rgba(13,21,36,0.06)] min-h-[380px]"
             >
               {/* Watermark Step Number */}
               <span className="absolute right-6 top-5 text-6xl font-heading font-black tracking-tight text-slate-100/70 group-hover:text-primary/10 transition-colors duration-500 select-none pointer-events-none">
@@ -87,17 +95,17 @@ export default function HowWeWork() {
                 </div>
 
                 <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60">
-                  Step {step.n}
+                  Method {step.n}
                 </p>
-                <h3 className="mt-1.5 text-[1.2rem] font-heading font-bold leading-snug tracking-tight text-secondary">
+                <h3 className="mt-1.5 text-[1.1rem] font-heading font-bold leading-snug tracking-tight text-secondary">
                   {step.title}
                 </h3>
-                <p className="mt-3.5 text-[0.925rem] leading-[1.75] text-slate-600">{step.body}</p>
+                <p className="mt-3.5 text-[0.85rem] leading-[1.65] text-slate-600">{step.body}</p>
               </div>
 
-              <ul className="mt-6 space-y-2.5 border-t border-slate-100/80 pt-5">
+              <ul className="mt-6 space-y-2 border-t border-slate-100/80 pt-4">
                 {step.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[0.82rem] leading-normal text-slate-600">
+                  <li key={b} className="flex items-start gap-2 text-[0.78rem] leading-normal text-slate-600">
                     <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                     <span>{b}</span>
                   </li>
@@ -109,17 +117,17 @@ export default function HowWeWork() {
 
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-[0.95rem] leading-7 text-slate-600 max-w-xl">
-            Want to see the model in action? Read the latest{' '}
-            <Link href="/impact" className="text-primary font-semibold hover:underline">
-              independent impact audit
+            Want to see our interventions in action? Read details of the{' '}
+            <Link href="/programs" className="text-primary font-semibold hover:underline">
+              Puducherry Youth Policy Debate 2026
             </Link>{' '}
-            or partner with us on a program.
+            or the Conclave.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-3 bg-primary text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide hover:bg-primary/90 transition-colors shadow-sm group"
           >
-            Partner with us
+            Connect With Us
             <span className="flex items-center justify-center bg-white text-primary rounded-full w-5 h-5 group-hover:scale-110 transition-transform">
               <ArrowRight className="w-3 h-3 stroke-[2.5]" />
             </span>

@@ -45,7 +45,7 @@ export default function Logo({
       />
       {showWordmark && (
         <span className={`text-lg font-heading font-bold tracking-tight ${wordmarkColor}`}>
-          Civic <span className={accentColor}>Knowledge</span>
+          DOCK
         </span>
       )}
     </span>

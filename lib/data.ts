@@ -23,83 +23,68 @@ export type Testimonial = {
 };
 
 export const stats = [
-  { value: 120, suffix: '+', label: 'Communities reached' },
-  { value: 45000, suffix: '+', label: 'Lives impacted' },
-  { value: 800, suffix: '+', label: 'Volunteers engaged' },
-  { value: 3, suffix: '', label: 'Years of service' },
+  { value: 2, suffix: ' Cr+', label: 'Voters Reached' },
+  { value: 50, suffix: '+', label: 'Campaigns Executed' },
+  { value: 32500, suffix: '+', label: 'Booths Covered' },
+  { value: 3, suffix: '', label: 'States Covered' },
 ];
 
 export const programs: Program[] = [
   {
-    slug: 'education',
-    title: 'Education for Every Child',
+    slug: 'institutional-literacy',
+    title: 'Institutional Literacy',
     summary:
-      'Bridging the learning gap with community schools, digital classrooms, scholarships and teacher training in underserved regions.',
-    // Children raising hands in a classroom
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&h=600&q=80',
+      'Understanding how laws are drafted, committees function, budgets are shaped, and authority is exercised in practice.',
+    image: 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&h=600&q=80',
   },
   {
-    slug: 'healthcare',
-    title: 'Health & Wellbeing',
+    slug: 'governance-simulations',
+    title: 'Governance Simulation Series',
     summary:
-      'Mobile health camps, maternal care, nutrition support and preventive health awareness for remote and low-income communities.',
-    // Doctor reviewing patient information
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&h=600&q=80',
+      'A high-intensity replication of legislative and fiscal processes where participants draft proposals, undergo committee scrutiny, and allocate budgets.',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&h=600&q=80',
   },
   {
-    slug: 'livelihood',
-    title: 'Livelihood & Skilling',
+    slug: 'civic-fellowship',
+    title: 'Civic Leadership Fellowship',
     summary:
-      'Vocational training, women-led self-help groups and micro-entrepreneurship support that build sustainable incomes.',
-    // Team collaborating around a table
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&h=600&q=80',
+      'An annual, limited-cohort program focused on governance immersion, institutional negotiation, crisis simulation, and structured policy drafting.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=600&q=80',
   },
   {
-    slug: 'environment',
-    title: 'Environment & Climate Action',
+    slug: 'policy-roundtables',
+    title: 'Policy Roundtables & Research Briefs',
     summary:
-      'Tree plantation drives, water conservation, clean-energy adoption and climate-resilience education for villages.',
-    // Hands planting a seedling
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&h=600&q=80',
+      'Curated thematic dialogues producing documented, publicly archived briefs and working notes.',
+    image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&h=600&q=80',
   },
   {
-    slug: 'women-empowerment',
-    title: 'Women Empowerment',
+    slug: 'institutional-advisory',
+    title: 'Institutional Advisory Engagement',
     summary:
-      'Leadership programs, financial literacy and legal-rights awareness enabling women to lead change in their communities.',
-    // Confident woman professional
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&h=600&q=80',
-  },
-  {
-    slug: 'disaster-relief',
-    title: 'Disaster Relief & Response',
-    summary:
-      'Rapid-response relief kits, shelter support and long-term rehabilitation for families affected by disasters.',
-    // Relief boxes being prepared for distribution
-    image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&h=600&q=80',
+      'Ongoing collaboration with administrators, academics, and governance practitioners to ensure seriousness and grounded perspective.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=600&q=80',
   },
 ];
 
 export const stories: Story[] = [
   {
-    slug: 'digital-classrooms-launch',
-    title: '25 new digital classrooms launched across rural districts',
-    date: '2026-05-28',
+    slug: 'youth-policy-debate-2026',
+    title: 'Puducherry Youth Policy Debate 2026 Launched Jointly by DOCK and MVIT',
+    date: '2026-03-15',
     excerpt:
-      'Our digital learning initiative now brings interactive education to more than 3,000 students in remote villages.',
-    // Student learning with a laptop
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&h=500&q=80',
-    category: 'Education',
+      'A campus forum on governance, law, and democratic dialogue brings together engineering students to debate digital rights, public policy, and regional governance.',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'Events',
   },
   {
-    slug: 'health-camp-milestone',
-    title: 'Mobile health camps cross 10,000 free consultations',
-    date: '2026-05-12',
+    slug: 'puducherry-outlook-conclave-success',
+    title: 'Puducherry Outlook Conclave 2026: Setting a New Civic Dialogue Standard',
+    date: '2026-02-06',
     excerpt:
-      'A milestone for community health: free check-ups, medicines and referrals delivered at the doorstep of families in need.',
-    // Doctor with stethoscope during consultation
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&h=500&q=80',
-    category: 'Healthcare',
+      'Featuring Dr. Kiran Bedi and G. Theva Neethi Dhas, the conclave successfully engaged over 500 students in constructive policy and administration dialogues.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=500&q=80',
+    category: 'Conclave',
   },
   {
     slug: 'political-shake-up-puducherry-hans-india',
@@ -144,34 +129,33 @@ export const stories: Story[] = [
 ];
 
 export const successStory = {
-  title: 'From dropout to district topper',
+  title: 'Puducherry Outlook Conclave 2026',
   quote:
-    'I thought my education ended in grade 6. The community learning centre gave me a second chance, and today I dream of becoming a teacher myself.',
-  name: 'Meera, 16',
-  location: 'Rural Maharashtra',
+    'We believe that informed dialogue and collective action are essential for building a stronger, more inclusive, and prosperous Puducherry. The conclave reflects DOCK\'s commitment to fostering civic awareness.',
+  name: 'Democratic Organization for Civic Knowledge',
+  location: 'Puducherry',
   body:
-    'When her family migrated for seasonal work, Meera dropped out of school. Through our bridge-education program and a scholarship, she rejoined mainstream school, topped her district board exams, and now mentors 20 younger girls in her village.',
-  // Young student reading a book
-  image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&h=1100&q=80',
+    'Organized by DOCK on 5 February 2026, the conclave brought together over 500 student delegates, policy experts, and administrative leaders (including Dr. Kiran Bedi and Shri G. Theva Neethi Dhas) to collaborate on Puducherry\'s development roadmap.',
+  image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&h=1100&q=80',
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Transparent, grounded and genuinely community-first. Every program partnership we have run with the foundation has produced measurable, documented outcomes.',
-    name: 'Ananya Rao',
-    role: 'CSR Head, Corporate Partner',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&h=120&q=80',
+      'The debate simulation was an eye-opener. It was not about theatrical rhetoric, but about understanding legislative procedures, administrative design, and budget allocation in practice.',
+    name: 'Student Participant',
+    role: 'MVIT Puducherry',
+    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&h=120&q=80',
   },
   {
     quote:
-      'The health camp in our village was the first time many elders got a proper check-up in years. They came back every month, as promised.',
-    name: 'Lakshmi Devi',
-    role: 'Community Member, Telangana',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80',
+      'DOCK successfully created a platform for constructive dialogue connecting policymakers directly with young citizens, fostering active civic responsibility.',
+    name: 'Dr. Kiran Bedi, IPS (Retd.)',
+    role: 'Former Lieutenant Governor of Puducherry',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80',
   },
 ];
 
 export const partners = [
-  'WHO', 'UNESCO', 'UNICEF', 'Smile Foundation', 'Oxfam', 'Save the Children', 'CARE', 'ActionAid', 'World Vision', 'Plan International',
+  'MVIT', 'Latchiya Jananayaga Katchi (LJK)', 'Regus', 'Puducherry Civic Forums', 'Manakula Vinayagar Institute of Technology',
 ];

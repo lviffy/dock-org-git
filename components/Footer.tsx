@@ -16,7 +16,7 @@ export default function Footer() {
         <div>
           <Image
             src="/CIVIC-KNOWLEDGE-jpg-transparent.png"
-            alt="Civic Knowledge logo"
+            alt="DOCK logo"
             width={252}
             height={110}
             className="object-contain -ml-[10px]"
@@ -24,7 +24,7 @@ export default function Footer() {
             priority
           />
           <p className="mt-5 text-sm leading-relaxed text-white/75">
-            An NGO-focused digital platform showcasing civic engagement, public policy awareness, democratic participation, and citizen empowerment.
+            Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.
           </p>
           <ul className="mt-6 flex gap-3">
             {socials.map((social) => (
@@ -58,15 +58,15 @@ export default function Footer() {
           <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Contact</h2>
           <ul className="mt-5 space-y-2.5 text-sm text-white/85">
             <li>Regus, Level 4, Kothari Centrum, Kondapur, Hyderabad 500084, India</li>
-            <li><a href="tel:+911234567890" className="transition hover:text-tertiary">+91 12345 67890</a></li>
-            <li><a href="mailto:contactus@civicknowledge.org" className="transition hover:text-tertiary">contactus@civicknowledge.org</a></li>
+            <li><a href="tel:+919542774416" className="transition hover:text-tertiary">+91 9542774416</a></li>
+            <li><a href="mailto:connect@docknowledge.org" className="transition hover:text-tertiary">connect@docknowledge.org</a></li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/15 py-6">
         <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-white/65">
-          © 2023 - {new Date().getFullYear()} Civic Knowledge. All rights reserved. · Registered non-profit · since 2023
+          © 2023 - {new Date().getFullYear()} DOCK (Democratic Organization for Civic Knowledge). All rights reserved.
         </p>
       </div>
     </footer>

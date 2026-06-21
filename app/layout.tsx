@@ -25,25 +25,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://civicknowledge.org'),
+  metadataBase: new URL('https://docknowledge.org'),
   title: {
-    default: 'Civic Knowledge | Small Acts. Big Change.',
-    template: '%s | Civic Knowledge',
+    default: 'Democratic Organization for Civic Knowledge (DOCK)',
+    template: '%s | DOCK',
   },
   description:
-    'Civic Knowledge is an NGO-focused digital platform that showcases civic engagement initiatives, governance knowledge, public policy awareness, democratic participation, and citizen empowerment programs.',
-  keywords: ['NGO', 'non-profit', 'civic engagement', 'governance', 'public policy', 'democracy', 'citizen empowerment', 'India'],
+    'Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.',
+  keywords: ['DOCK', 'Democratic Organization for Civic Knowledge', 'governance', 'public policy', 'democracy', 'civic research', 'political leadership', 'legislative procedure', 'fiscal process', 'administrative architecture', 'India', 'Puducherry'],
   openGraph: {
     type: 'website',
-    siteName: 'Civic Knowledge',
-    title: 'Civic Knowledge | Small Acts. Big Change.',
+    siteName: 'DOCK',
+    title: 'Democratic Organization for Civic Knowledge (DOCK)',
     description:
-      'Empowering citizens and showcasing governance and public policy initiatives across India.',
+      'Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Civic Knowledge | Small Acts. Big Change.',
-    description: 'Empowering citizens and showcasing governance and public policy initiatives across India.',
+    title: 'Democratic Organization for Civic Knowledge (DOCK)',
+    description: 'Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.',
   },
   icons: {
     icon: [{ url: '/CIVIC-KNOWLEDGE-jpg-transparent.png', type: 'image/png' }],

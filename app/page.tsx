@@ -22,6 +22,45 @@ export default function HomePage() {
       <MissionVision />
       <HowWeWork />
 
+      {/* Spotlight Initiative: Youth Policy Debate 2026 */}
+      <section className="bg-primary text-white py-14 md:py-20 overflow-hidden relative border-t border-white/5">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-15"
+          style={{
+            background:
+              'radial-gradient(80% 50% at 80% 20%, rgba(255,255,255,0.15) 0%, rgba(2,6,54,0) 60%)',
+          }}
+        />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_1.1fr] lg:items-center">
+            <div>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-tertiary/20 px-3.5 py-1.5 text-xs font-bold text-tertiary tracking-wide uppercase">
+                Our Work
+              </span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mt-5 leading-tight">
+                Puducherry Youth Policy Debate 2026
+              </h2>
+              <p className="mt-3 text-lg font-heading font-medium text-tertiary">
+                Theme: Where Technology, Ideas and Policy Meet
+              </p>
+              <p className="mt-5 text-sm leading-relaxed text-white/80 max-w-xl">
+                Jointly conducted by DOCK and Manakula Vinayagar Institute of Technology (MVIT), this campus forum provides a structured platform for student leaders to engage with governance, digital rights, and regional policy challenges.
+              </p>
+            </div>
+            <div className="flex flex-col justify-center items-start lg:items-end">
+              <Link
+                href="/programs"
+                className="inline-flex items-center gap-3 bg-tertiary text-white px-7 py-3.5 rounded-full text-xs font-bold tracking-wide hover:bg-tertiary/90 transition-all shadow-md group"
+              >
+                Explore Forum &amp; Topics
+                <ArrowRight className="w-4 h-4 stroke-[2.5] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Case Study Highlight */}
       <section className="bg-[#FAFBFD] border-t border-b border-slate-100 py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

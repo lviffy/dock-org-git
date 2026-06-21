@@ -1,22 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Compass, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, FileText, Settings, Database } from 'lucide-react';
 
 const visionPoints = [
   {
-    title: 'Community-Led',
-    description: 'Programs designed with the people they serve, not for them — listening first, then acting.',
-    Icon: Compass,
+    title: 'Legislative Procedure',
+    description: 'Understanding how laws are drafted, committees function, budgets are shaped, and authority is exercised in practice.',
+    Icon: FileText,
   },
   {
-    title: 'Measured Outcomes',
-    description: 'Every initiative is built around clear metrics, transparent reporting and long-term accountability.',
-    Icon: Sparkles,
+    title: 'Administrative Design',
+    description: 'Unpacking the complex structures of public administration, execution frameworks, and authority limitations.',
+    Icon: Settings,
   },
   {
-    title: 'Lasting Trust',
-    description: 'A foundation-first approach that keeps partnerships grounded in dignity and mutual respect.',
-    Icon: ShieldCheck,
+    title: 'Fiscal Architecture',
+    description: 'Analyzing budget execution, fiscal responsibility, and public resources allocation mechanisms.',
+    Icon: Database,
   },
 ];
 
@@ -32,29 +32,25 @@ export default function MissionVision() {
                   <span className="h-[3px] w-[3px] rounded-full bg-primary" />
                   <span className="h-[1px] w-8 bg-gradient-to-r from-primary to-transparent" />
                 </div>
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.35em] text-primary">Mission &amp; Vision</p>
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.35em] text-primary">Core Philosophy</p>
               </div>
 
               <h3 className="font-heading text-[1.6rem] leading-[1.18] tracking-tight text-secondary sm:text-[2.2rem] md:text-[3.25rem]">
-                Communities don&apos;t need saviors. <br />
-                They need <span className="italic text-primary font-light">partners</span>.
+                Democracy does not run on sentiment. <br />
+                It runs on <span className="italic text-primary font-light">structure</span>.
               </h3>
 
               <p className="mt-6 max-w-2xl text-[0.95rem] md:text-[1.05rem] leading-[1.75] md:leading-[1.8] text-slate-700">
-                Our mission is to empower underserved communities through quality education, accessible
-                healthcare, dignified livelihoods and a healthy environment. Our vision is a world where every
-                person, regardless of where they are born, has the opportunity to live a healthy, educated and
-                self-reliant life.
+                Across campuses, civil society, and party ecosystems, engagement is rising— but structured understanding of legislative design, fiscal process, and administrative architecture remains uneven. When discourse detaches from structure, accountability becomes personality-driven rather than process-driven.
               </p>
             </div>
 
             <div className="mt-8 md:mt-10 rounded-t-[2rem] md:rounded-t-[3rem] rounded-b-[1rem] border border-slate-100 bg-neutral/40 p-5 sm:p-6 md:p-10 relative overflow-hidden group hover:border-primary/30 transition-colors duration-700">
               <div className="absolute top-0 right-0 w-32 h-32 -mr-12 -mt-12 rounded-full border border-primary/15 group-hover:scale-[1.8] transition-transform duration-1000 ease-in-out" />
               <div className="absolute top-0 right-0 w-44 h-44 -mr-16 -mt-16 rounded-full border border-primary/10 group-hover:scale-[1.8] transition-transform duration-1000 delay-75 ease-in-out" />
-              <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary">Why This Matters</p>
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary">The Structural Gap</p>
               <p className="mt-3 md:mt-4 max-w-2xl text-[0.92rem] md:text-[1rem] leading-[1.7] md:leading-[1.8] text-slate-700">
-                When communities lead, change sticks. Every program we run is shaped alongside the people
-                it serves — schools, clinics, livelihoods and ecosystems built to outlast us.
+                DOCK exists to strengthen structural understanding in public life. Our objective is a cultural shift: investing in a generation that values structure as much as outcome, ensuring advocacy aligns with constitutional frameworks.
               </p>
             </div>
           </div>

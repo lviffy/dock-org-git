@@ -71,7 +71,7 @@ export default function Header() {
       style={scrolled ? { boxShadow: '0 2px 16px -6px rgb(13 21 36 / 0.06)' } : undefined}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex h-[88px] items-center justify-between">
-        <Link href="/" className="flex items-center" aria-label="Civic Knowledge home">
+        <Link href="/" className="flex items-center" aria-label="DOCK home">
           <Logo />
         </Link>
 

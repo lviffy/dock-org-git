@@ -7,26 +7,26 @@ import { ArrowRight } from 'lucide-react';
 
 const translations = {
   en: {
-    eyebrow: 'Registered non-profit · since 2023',
-    titleMain: 'Small acts. ',
-    titleItalic: 'Big change.',
-    description: "Since 2023, we've partnered with communities across India to deliver lasting change in education, healthcare, livelihoods and the environment. One village, one family, one child at a time.",
+    eyebrow: 'Think · Engage · Lead',
+    titleMain: 'Build Leaders. Decode Governance. ',
+    titleItalic: 'Strengthen Democracy.',
+    description: "Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. We work through disciplined, repeatable institutional interventions prioritizing clarity over rhetoric.",
     exploreBtn: 'Explore Our Work',
     contactBtn: 'Get in Touch',
-    statCommunities: 'Communities served',
-    statLives: 'Lives impacted',
-    statYears: 'Years of service',
+    statCommunities: 'Voters Reached',
+    statLives: 'Campaigns Executed',
+    statYears: 'Booths Covered',
   },
   te: {
-    eyebrow: 'రిజిస్టర్డ్ నాన్-ప్రాఫిట్ · 2023 నుండి',
-    titleMain: 'చిన్న సహాయాలు. ',
-    titleItalic: 'పెద్ద మార్పులు.',
-    description: '2023 నుండి, మేము భారతదేశంలోని అనేక ప్రాంతాలలో విద్య, వైద్యం, ఉపాధి మరియు పర్యావరణ రంగాలలో శాశ్వత మార్పును తీసుకురావడానికి కమ్యూనిటీలతో కలిసి పని చేస్తున్నాము. ప్రతి గ్రామం, ప్రతి కుటుంబం, ప్రతి బిడ్డకు అండగా.',
+    eyebrow: 'ఆలోచించండి · భాగస్వామ్యం వహించండి · నడిపించండి',
+    titleMain: 'నాయకులను నిర్మించండి. పాలనను డీకోడ్ చేయండి. ',
+    titleItalic: 'ప్రజాస్వామ్యాన్ని బలోపేతం చేయండి.',
+    description: 'ప్రజా జీవితంలో నిర్మాణాత్మక అవగాహనను బలోపేతం చేయడానికి డెమోక్రటిక్ ఆర్గనైజేషన్ ఫర్ సివిక్ నాలెడ్జ్ (DOCK) పనిచేస్తుంది. మేము వాక్చాతుర్యం కంటే స్పష్టతకు ప్రాధాన్యత ఇస్తూ క్రమశిక్షణతో కూడిన పద్ధతుల ద్వారా పని చేస్తాము.',
     exploreBtn: 'కార్యక్రమాలను చూడండి',
     contactBtn: 'సంప్రదించండి',
-    statCommunities: 'కమ్యూనిటీలు',
-    statLives: 'లబ్ధిదారులు',
-    statYears: 'సేవా సంవత్సరాలు',
+    statCommunities: 'ఓటర్లకు చేరువయ్యాము',
+    statLives: 'క్యాంపెయిన్లు',
+    statYears: 'పోలింగ్ బూతులు',
   },
 };
 
@@ -96,15 +96,15 @@ export default function Hero() {
           <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-6">
             <div>
               <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statCommunities}</dt>
-              <dd className="mt-1 text-2xl font-heading font-bold text-white">120+</dd>
+              <dd className="mt-1 text-2xl font-heading font-bold text-white">2 Cr+</dd>
             </div>
             <div>
               <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statLives}</dt>
-              <dd className="mt-1 text-2xl font-heading font-bold text-white">45,000+</dd>
+              <dd className="mt-1 text-2xl font-heading font-bold text-white">50+</dd>
             </div>
             <div>
               <dt className="text-[10px] font-semibold uppercase tracking-widest text-white/55">{t.statYears}</dt>
-              <dd className="mt-1 text-2xl font-heading font-bold text-white">3</dd>
+              <dd className="mt-1 text-2xl font-heading font-bold text-white">32,500+</dd>
             </div>
           </dl>
         </div>
@@ -112,8 +112,8 @@ export default function Hero() {
         <div className="relative hidden lg:block">
           <div className="relative ml-auto h-[480px] w-[400px] overflow-hidden rounded-3xl border border-white/15">
             <Image
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&h=1000&q=80"
-              alt="Children smiling at a community learning centre"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=1000&q=80"
+              alt="Governance debate and panel"
               fill
               priority
               className="object-cover"
@@ -121,8 +121,8 @@ export default function Hero() {
             />
           </div>
           <div className="absolute -left-4 bottom-10 w-64 rounded-2xl bg-secondary p-5 shadow-[0_20px_60px_rgba(2,6,54,0.45)]">
-            <p className="text-sm font-heading font-bold text-white">"Every child deserves a classroom."</p>
-            <p className="mt-1 text-xs text-white/80">3,000+ students reached through digital classrooms this year.</p>
+            <p className="text-sm font-heading font-bold text-white">"Democracy runs on structure."</p>
+            <p className="mt-1 text-xs text-white/80">Strengthening understanding of legislative and fiscal design across campuses.</p>
           </div>
         </div>
       </div>

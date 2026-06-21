@@ -13,14 +13,14 @@ const contactDetails = [
   {
     Icon: PhoneIcon,
     label: 'Phone',
-    value: '+91 12345 67890',
-    href: 'tel:+911234567890',
+    value: '+91 9542774416',
+    href: 'tel:+919542774416',
   },
   {
     Icon: MailIcon,
     label: 'Email',
-    value: 'contactus@civicknowledge.org',
-    href: 'mailto:contactus@civicknowledge.org',
+    value: 'connect@docknowledge.org',
+    href: 'mailto:connect@docknowledge.org',
   },
   {
     Icon: ClockIcon,
