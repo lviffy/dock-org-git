@@ -114,14 +114,12 @@ export default function FeaturedConclave() {
       <section className="py-12 md:py-16 bg-[#FAFBFD] border-b border-slate-200/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            {/* Accordion Container */}
-            <div className="bg-white border border-slate-200/65 rounded-3xl overflow-hidden shadow-[0_4px_25px_rgba(13,21,36,0.02)] hover:border-slate-300 transition-all duration-300">
+            {/* Accordion Container on mobile, plain layout on desktop */}
+            <div className="md:bg-transparent md:border-0 md:shadow-none md:rounded-none md:overflow-visible bg-white border border-slate-200/65 rounded-3xl overflow-hidden shadow-[0_4px_25px_rgba(13,21,36,0.02)]">
               
-              {/* Accordion Header */}
-              <button 
-                onClick={() => setSession1Open(!session1Open)}
-                className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group focus:outline-none"
-                aria-expanded={session1Open}
+              {/* Accordion Header (button on mobile, div on desktop) */}
+              <div 
+                className="md:p-0 md:pb-8 md:flex md:justify-between md:items-center md:border-b md:border-slate-200/60 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
               >
                 <div className="space-y-3.5 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-3">
@@ -137,7 +135,7 @@ export default function FeaturedConclave() {
                       Moderator: Shri Gopalaswamy Krishnan
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3.5xl font-heading font-bold text-secondary tracking-tight">
                     Present Realities and Governance of Puducherry
                   </h3>
                   <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
@@ -145,18 +143,23 @@ export default function FeaturedConclave() {
                   </p>
                 </div>
                 
-                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider shrink-0 mt-2 md:mt-0">
+                {/* Mobile-only toggle button */}
+                <button
+                  onClick={() => setSession1Open(!session1Open)}
+                  className="md:hidden flex items-center justify-between w-full gap-2 text-primary font-bold text-xs uppercase tracking-wider shrink-0 mt-2 focus:outline-none border-t border-slate-100 pt-4"
+                  aria-expanded={session1Open}
+                >
                   <span>{session1Open ? 'Hide details' : 'Show details'}</span>
                   <div className={`h-8 w-8 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-slate-50 ${session1Open ? 'rotate-180' : ''}`}>
                     <ChevronDown className="h-4 w-4" />
                   </div>
-                </div>
-              </button>
+                </button>
+              </div>
 
               {/* Accordion Collapsible Content */}
               <div 
-                className={`transition-all duration-300 overflow-hidden ${
-                  session1Open ? 'max-h-[2500px] border-t border-slate-100 p-6 md:p-8 bg-slate-50/20' : 'max-h-0'
+                className={`transition-all duration-300 overflow-hidden md:max-h-none md:opacity-100 md:pt-8 md:bg-transparent md:p-0 ${
+                  session1Open ? 'max-h-[2500px] border-t border-slate-100 p-6 bg-slate-50/20' : 'max-h-0'
                 }`}
               >
                 {/* Audience block */}
@@ -301,14 +304,12 @@ export default function FeaturedConclave() {
       <section className="py-12 md:py-16 bg-white border-b border-slate-200/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            {/* Accordion Container */}
-            <div className="bg-white border border-slate-200/65 rounded-3xl overflow-hidden shadow-[0_4px_25px_rgba(13,21,36,0.02)] hover:border-slate-300 transition-all duration-300">
+            {/* Accordion Container on mobile, plain layout on desktop */}
+            <div className="md:bg-transparent md:border-0 md:shadow-none md:rounded-none md:overflow-visible bg-white border border-slate-200/65 rounded-3xl overflow-hidden shadow-[0_4px_25px_rgba(13,21,36,0.02)]">
               
-              {/* Accordion Header */}
-              <button 
-                onClick={() => setSession2Open(!session2Open)}
-                className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group focus:outline-none"
-                aria-expanded={session2Open}
+              {/* Accordion Header (button on mobile, div on desktop) */}
+              <div 
+                className="md:p-0 md:pb-8 md:flex md:justify-between md:items-center md:border-b md:border-slate-200/60 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
               >
                 <div className="space-y-3.5 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-3">
@@ -324,7 +325,7 @@ export default function FeaturedConclave() {
                       Moderator: Shri Gopalaswamy Krishnan
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary tracking-tight">
                     A Blueprint for Puducherry&apos;s Future
                   </h3>
                   <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
@@ -332,18 +333,23 @@ export default function FeaturedConclave() {
                   </p>
                 </div>
                 
-                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider shrink-0 mt-2 md:mt-0">
+                {/* Mobile-only toggle button */}
+                <button
+                  onClick={() => setSession2Open(!session2Open)}
+                  className="md:hidden flex items-center justify-between w-full gap-2 text-primary font-bold text-xs uppercase tracking-wider shrink-0 mt-2 focus:outline-none border-t border-slate-100 pt-4"
+                  aria-expanded={session2Open}
+                >
                   <span>{session2Open ? 'Hide details' : 'Show details'}</span>
                   <div className={`h-8 w-8 rounded-full border border-slate-200 flex items-center justify-center text-primary transition-transform duration-300 bg-slate-50 ${session2Open ? 'rotate-180' : ''}`}>
                     <ChevronDown className="h-4 w-4" />
                   </div>
-                </div>
-              </button>
+                </button>
+              </div>
 
               {/* Accordion Collapsible Content */}
               <div 
-                className={`transition-all duration-300 overflow-hidden ${
-                  session2Open ? 'max-h-[2500px] border-t border-slate-100 p-6 md:p-8 bg-slate-50/20' : 'max-h-0'
+                className={`transition-all duration-300 overflow-hidden md:max-h-none md:opacity-100 md:pt-8 md:bg-transparent md:p-0 ${
+                  session2Open ? 'max-h-[2500px] border-t border-slate-100 p-6 bg-slate-50/20' : 'max-h-0'
                 }`}
               >
                 {/* Session 2 Image Gallery */}
@@ -460,21 +466,21 @@ export default function FeaturedConclave() {
       <section className="py-16 md:py-24 bg-[#FAFBFD] border-b border-slate-200/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="p-8 md:p-12 rounded-3xl bg-primary text-white space-y-6 shadow-sm border border-primary relative overflow-hidden max-w-4xl mx-auto text-center">
+            <div className="p-8 md:p-12 rounded-3xl bg-white text-slate-800 space-y-6 shadow-md border border-slate-200/80 relative overflow-hidden max-w-4xl mx-auto text-center">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-15"
+                className="pointer-events-none absolute inset-0 opacity-100"
                 style={{
                   background:
-                    'radial-gradient(100% 100% at 50% 50%, rgba(0,123,255,1) 0%, rgba(2,6,54,0) 80%)',
+                    'radial-gradient(100% 100% at 50% 50%, rgba(0,123,255,0.05) 0%, rgba(255,255,255,0) 80%)',
                 }}
               />
               <div className="text-5xl font-serif text-tertiary/40 leading-none select-none">&ldquo;</div>
-              <p className="text-lg md:text-xl leading-relaxed text-white/95 italic -mt-4 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl leading-relaxed text-slate-700 italic -mt-4 max-w-3xl mx-auto">
                 We believe that informed dialogue and collective action are essential for building a stronger, more inclusive, and prosperous Puducherry. The conclave reflects DOCK&apos;s commitment to fostering civic awareness and empowering future generations to participate in shaping society.
               </p>
-              <div className="border-t border-white/10 pt-5 mt-6 w-fit mx-auto">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+              <div className="border-t border-slate-100 pt-5 mt-6 w-fit mx-auto">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
                   Democratic Organization for Civic Knowledge
                 </p>
               </div>

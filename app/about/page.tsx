@@ -8,23 +8,31 @@ export const metadata: Metadata = { title: 'About Us' };
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-[#FAFBFD] py-20 text-slate-800 md:py-28 border-b border-slate-200/60">
+        {/* Subtle blue dot grid background pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage: 'radial-gradient(var(--color-primary) 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-25"
+          className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             background:
-              'radial-gradient(60% 50% at 80% 20%, rgba(46,91,154,0.55) 0%, rgba(2,6,54,0) 60%)',
+              'radial-gradient(60% 50% at 80% 20%, rgba(0,123,255,0.06) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-tertiary mb-6">
             Organizational Profile
           </p>
-          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.05] tracking-tight font-heading font-bold max-w-4xl">
+          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.05] tracking-tight font-heading font-bold text-primary max-w-4xl">
             Who we are
           </h1>
-          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-white/80">
+          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-slate-600">
             Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. We operate as a Civic Research Institute, a Governance Intelligence Initiative, and a Political Leadership development platform.
           </p>
         </div>
@@ -100,29 +108,29 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-primary text-white rounded-3xl p-8 md:p-14 relative overflow-hidden shadow-lg border border-primary">
+          <div className="bg-white text-slate-800 rounded-3xl p-8 md:p-14 relative overflow-hidden shadow-md border border-slate-200/80">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 opacity-15"
+              className="pointer-events-none absolute inset-0 opacity-100"
               style={{
                 background:
-                  'radial-gradient(100% 100% at 90% 10%, rgba(0,123,255,1) 0%, rgba(2,6,54,0) 80%)',
+                  'radial-gradient(100% 100% at 90% 10%, rgba(0,123,255,0.05) 0%, rgba(255,255,255,0) 80%)',
               }}
             />
             
             <div className="relative z-10 grid gap-10 md:grid-cols-2 lg:items-center">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold leading-tight border-b border-white/20 pb-5">
+                <h3 className="text-xl md:text-2xl font-bold leading-tight text-primary border-b border-slate-100 pb-5">
                   Democratic systems weaken when public discourse detaches from institutional mechanics.
                 </h3>
-                <p className="mt-6 text-sm text-white/80 leading-relaxed">
+                <p className="mt-6 text-sm text-slate-600 leading-relaxed">
                   If institutional knowledge is accessible, if civic dialogue precedes reaction, and if young leaders understand fiscal and legislative design — then advocacy aligns with constitutional structures, and accountability becomes process-based rather than personality-driven.
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-2xl p-6 md:p-8 space-y-4 border border-white/10">
+              <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 md:p-8 space-y-4">
                 <p className="text-sm font-semibold text-tertiary">Our ultimate goal is not visibility. It is a cultural shift.</p>
-                <p className="text-xs text-white/80 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   DOCK invests in a generation that values structure as much as outcome, strengthening public discourse and building long-term institutional resilience.
                 </p>
               </div>

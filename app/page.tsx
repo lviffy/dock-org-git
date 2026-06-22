@@ -23,28 +23,36 @@ export default function HomePage() {
       <HowWeWork />
 
       {/* Spotlight Initiative: Youth Policy Debate 2026 */}
-      <section className="bg-primary text-white py-14 md:py-20 overflow-hidden relative border-t border-white/5">
+      <section className="bg-white text-slate-800 py-14 md:py-20 overflow-hidden relative border-t border-b border-slate-100">
+        {/* Subtle blue dot grid background pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage: 'radial-gradient(var(--color-primary) 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-15"
+          className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             background:
-              'radial-gradient(80% 50% at 80% 20%, rgba(255,255,255,0.15) 0%, rgba(2,6,54,0) 60%)',
+              'radial-gradient(80% 50% at 80% 20%, rgba(0,123,255,0.06) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1.1fr] lg:items-center">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-tertiary/20 px-3.5 py-1.5 text-xs font-bold text-tertiary tracking-wide uppercase">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-tertiary/10 px-3.5 py-1.5 text-xs font-bold text-tertiary tracking-wide uppercase">
                 Our Work
               </span>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mt-5 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mt-5 leading-tight text-primary">
                 Puducherry Youth Policy Debate 2026
               </h2>
               <p className="mt-3 text-lg font-heading font-medium text-tertiary">
                 Theme: Where Technology, Ideas and Policy Meet
               </p>
-              <p className="mt-5 text-sm leading-relaxed text-white/80 max-w-xl">
+              <p className="mt-5 text-sm leading-relaxed text-slate-600 max-w-xl">
                 Jointly conducted by DOCK and Manakula Vinayagar Institute of Technology (MVIT), this campus forum provides a structured platform for student leaders to engage with governance, digital rights, and regional policy challenges.
               </p>
             </div>

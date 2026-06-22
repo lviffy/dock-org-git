@@ -11,7 +11,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#FAFBFD] border-t border-slate-200/80 text-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Image
@@ -19,11 +19,11 @@ export default function Footer() {
             alt="DOCK logo"
             width={252}
             height={110}
-            className="object-contain -ml-[10px]"
+            className="object-contain -ml-[10px] brightness-0 opacity-80"
             style={{ height: '110px', width: '252px' }}
             priority
           />
-          <p className="mt-5 text-sm leading-relaxed text-white/75">
+          <p className="mt-5 text-sm leading-relaxed text-slate-600">
             Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.
           </p>
           <ul className="mt-6 flex gap-3">
@@ -32,7 +32,7 @@ export default function Footer() {
                 <a
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors duration-300 hover:bg-tertiary hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors duration-300 hover:bg-tertiary hover:text-white"
                 >
                   <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={social.icon} />
@@ -44,8 +44,8 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Quick links">
-          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Quick Links</h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/85">
+          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-primary">Quick Links</h2>
+          <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
             <li><Link href="/about" className="transition hover:text-tertiary">About Us</Link></li>
             <li><Link href="/programs" className="transition hover:text-tertiary">Our Work</Link></li>
             <li><Link href="/impact" className="transition hover:text-tertiary">Impact</Link></li>
@@ -55,8 +55,8 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-white">Contact</h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/85">
+          <h2 className="text-sm font-heading font-bold uppercase tracking-[0.25em] text-primary">Contact</h2>
+          <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
             <li>Regus, Level 4, Kothari Centrum, Kondapur, Hyderabad 500084, India</li>
             <li><a href="tel:+919542774416" className="transition hover:text-tertiary">+91 9542774416</a></li>
             <li><a href="mailto:connect@docknowledge.org" className="transition hover:text-tertiary">connect@docknowledge.org</a></li>
@@ -64,8 +64,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/15 py-6">
-        <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-white/65">
+      <div className="border-t border-slate-200/60 py-6">
+        <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-400">
           © 2023 - {new Date().getFullYear()} DOCK (Democratic Organization for Civic Knowledge). All rights reserved.
         </p>
       </div>

@@ -60,23 +60,31 @@ export default function ImpactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-[#FAFBFD] py-20 text-slate-800 md:py-28 border-b border-slate-200/60">
+        {/* Subtle blue dot grid background pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage: 'radial-gradient(var(--color-primary) 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-25"
+          className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             background:
-              'radial-gradient(60% 50% at 80% 20%, rgba(46,91,154,0.55) 0%, rgba(2,6,54,0) 60%)',
+              'radial-gradient(60% 50% at 80% 20%, rgba(0,123,255,0.06) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-tertiary mb-6">
             Impact Showcase
           </p>
-          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.05] tracking-tight font-heading font-bold max-w-4xl">
+          <h1 className="text-[2.3rem] md:text-[3.7rem] leading-[1.05] tracking-tight font-heading font-bold text-primary max-w-4xl">
             Campaign systems that convert complexity into measurable electoral outcomes.
           </h1>
-          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-white/80">
+          <p className="mt-7 max-w-3xl text-[1.03rem] md:text-[1.2rem] leading-8 text-slate-600">
             Civic Knowledge showcases selected achievements, impact stories, and democratic outcomes. 
             Below are detailed case studies of campaign strategies, organizational structures, and measurable impacts delivered by Dock Consulting.
           </p>
@@ -545,10 +553,27 @@ export default function ImpactPage() {
       </section>
 
       {/* Bottom CTA Section */}
-      <section className="bg-primary py-20 text-white text-center relative overflow-hidden">
+      <section className="bg-white border-t border-slate-100 py-20 text-slate-800 text-center relative overflow-hidden">
+        {/* Subtle blue dot grid background pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.02]"
+          style={{
+            backgroundImage: 'radial-gradient(var(--color-primary) 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
+        {/* Soft blue highlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-100"
+          style={{
+            background:
+              'radial-gradient(80% 50% at 50% 50%, rgba(0,123,255,0.04) 0%, rgba(255,255,255,0) 60%)',
+          }}
+        />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">Ready to be our next success story?</h2>
-          <p className="mt-5 text-white/80 max-w-xl mx-auto text-sm leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary">Ready to be our next success story?</h2>
+          <p className="mt-5 text-slate-600 max-w-xl mx-auto text-sm leading-relaxed">
             Partner with us to deploy disciplined ground execution systems, campaign strategy, and political intelligence.
           </p>
           <div className="mt-8">

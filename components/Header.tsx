@@ -63,11 +63,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? 'bg-white border-slate-100'
-          : 'bg-white border-transparent'
-      }`}
+      className="sticky top-0 z-50 border-b border-slate-200/80 bg-white transition-all duration-300"
       style={scrolled ? { boxShadow: '0 2px 16px -6px rgb(13 21 36 / 0.06)' } : undefined}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex h-[88px] items-center justify-between">
