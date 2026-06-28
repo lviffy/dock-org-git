@@ -76,7 +76,7 @@ export default function HomePage() {
             {/* Image — shows first on mobile, right side on desktop */}
             <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-md border border-slate-100 order-first lg:order-last">
               <Image
-                src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&h=550&q=80"
+                src="/keynote-panel.webp"
                 alt="Puducherry political movement case study"
                 fill
                 className="object-cover"

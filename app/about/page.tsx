@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid items-center gap-12 lg:grid-cols-2">
           <div className="relative h-80 lg:h-[420px] overflow-hidden rounded-3xl">
             <Image
-              src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=900&h=700&q=80"
+              src="/structural-gap.webp"
               alt="Civic dialogue and public administration meeting"
               fill
               className="object-cover"

@@ -3,7 +3,7 @@ import Image from 'next/image';
 /**
  * Brand logo — single source of truth for the site logo (used in Header & Footer).
  *
- * Icon artwork lives at `/public/civiclogo.png`. Replace that file
+ * Icon artwork lives at `/public/civiclogo.webp`. Replace that file
  * (same filename) to update the logo everywhere, including the favicon.
  *
  * - `showWordmark` adds the "Dock Foundation" wordmark next to the mark.
@@ -27,7 +27,7 @@ export default function Logo({
   textColor = 'dark',
   width = 168,
   height = 77,
-  src = '/civiclogo.png',
+  src = '/civiclogo.webp',
 }: Props) {
   const wordmarkColor = textColor === 'white' ? 'text-white' : 'text-black';
   const accentColor = textColor === 'white' ? 'text-tertiary' : 'text-black';

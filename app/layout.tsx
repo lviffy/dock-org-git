@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     description: 'Democratic Organization for Civic Knowledge (DOCK) exists to strengthen structural understanding in public life. Build Leaders. Decode Governance. Strengthen Democracy.',
   },
   icons: {
-    icon: [{ url: '/CIVIC-KNOWLEDGE-jpg-transparent.png', type: 'image/png' }],
-    shortcut: '/CIVIC-KNOWLEDGE-jpg-transparent.png',
-    apple: '/CIVIC-KNOWLEDGE-jpg-transparent.png',
+    icon: [{ url: '/civic-knowledge-jpg-transparent.webp', type: 'image/webp' }],
+    shortcut: '/civic-knowledge-jpg-transparent.webp',
+    apple: '/civic-knowledge-jpg-transparent.webp',
   },
   robots: { index: true, follow: true },
 };

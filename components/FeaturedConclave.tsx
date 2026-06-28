@@ -64,7 +64,7 @@ export default function FeaturedConclave() {
 
               <div className="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-lg border border-slate-200/60">
                 <Image
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&h=550&q=80"
+                  src="/puducherry-outlook-conclave-2026.webp"
                   alt="Students and professionals engaged in active discussion at the conclave"
                   fill
                   className="object-cover"
@@ -172,7 +172,7 @@ export default function FeaturedConclave() {
                 <div className="grid gap-6 md:grid-cols-2 mb-10">
                   <div className="relative h-64 rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-100 group">
                     <Image
-                      src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=550&q=80"
+                      src="/keynote-panel.webp"
                       alt="Session 1 Panel discussion on governance and finance realities"
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -184,7 +184,7 @@ export default function FeaturedConclave() {
                   </div>
                   <div className="relative h-64 rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-100 group">
                     <Image
-                      src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&h=550&q=80"
+                      src="/student-delegation.webp"
                       alt="Student audience representing Pondicherry University, MIT, and Tagore College"
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -204,7 +204,7 @@ export default function FeaturedConclave() {
                       <div className="flex items-center gap-4 border-b border-slate-100 pb-5 mb-6">
                         <div className="relative h-14 w-14 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
                           <Image
-                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80"
+                            src="/kiran-bedi-pfp.webp"
                             alt="Dr Kiran Bedi"
                             fill
                             className="object-cover grayscale"
@@ -254,7 +254,7 @@ export default function FeaturedConclave() {
                       <div className="flex items-center gap-4 border-b border-slate-100 pb-5 mb-6">
                         <div className="relative h-14 w-14 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
                           <Image
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80"
+                            src="/theva-neethi-dhas.webp"
                             alt="Shri G. Theva Neethi Dhas"
                             fill
                             className="object-cover grayscale"
@@ -356,7 +356,7 @@ export default function FeaturedConclave() {
                 <div className="grid gap-6 md:grid-cols-2 mb-10">
                   <div className="relative h-64 rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-100 group">
                     <Image
-                      src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&h=550&q=80"
+                      src="/keynote-panel.webp"
                       alt="Session 2 presentation outlining Puducherry's Future Blueprint"
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -368,7 +368,7 @@ export default function FeaturedConclave() {
                   </div>
                   <div className="relative h-64 rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-100 group">
                     <Image
-                      src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&h=550&q=80"
+                      src="/student-delegation.webp"
                       alt="Interactive youth dialogue on infrastructure and jobs"
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -387,7 +387,7 @@ export default function FeaturedConclave() {
                     <div className="flex items-center gap-4 border-b border-slate-200/60 pb-5 mb-6">
                       <div className="relative h-16 w-16 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
                         <Image
-                          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80"
+                          src="/jose-charles-martin-pfp.webp"
                           alt="Shri Jose Charles Martin"
                           fill
                           className="object-cover grayscale"

@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Image
-            src="/CIVIC-KNOWLEDGE-jpg-transparent.png"
+            src="/civic-knowledge-jpg-transparent.webp"
             alt="DOCK logo"
             width={252}
             height={110}

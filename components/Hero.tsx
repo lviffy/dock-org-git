@@ -124,7 +124,7 @@ export default function Hero() {
         <div className="relative hidden lg:block">
           <div className="relative ml-auto h-[480px] w-[400px] overflow-hidden rounded-3xl border border-slate-200/60">
             <Image
-              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=1000&q=80"
+              src="/hero-photo.webp"
               alt="Governance debate and panel"
               fill
               priority
@@ -142,7 +142,7 @@ export default function Hero() {
       {/* Mobile image strip — visible below hero content on small screens */}
       <div className="block lg:hidden relative h-52 sm:h-60 overflow-hidden border-t border-slate-100">
         <Image
-          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&h=500&q=80"
+          src="/hero-photo.webp"
           alt="Governance debate and panel"
           fill
           className="object-cover object-top"
