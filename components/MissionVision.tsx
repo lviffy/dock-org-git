@@ -1,90 +1,153 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight, FileText, Settings, Database } from 'lucide-react';
+import Reveal from '@/components/Reveal';
 
 const visionPoints = [
   {
+    n: '01',
     title: 'Legislative Procedure',
     description: 'Understanding how laws are drafted, committees function, budgets are shaped, and authority is exercised in practice.',
     Icon: FileText,
+    shapeClass: 'rounded-t-[4rem] rounded-b-2xl pt-14 pb-8 px-6 sm:px-8',
   },
   {
+    n: '02',
     title: 'Administrative Design',
     description: 'Unpacking the complex structures of public administration, execution frameworks, and authority limitations.',
     Icon: Settings,
+    shapeClass: 'rounded-tl-[4rem] rounded-br-[4rem] rounded-tr-2xl rounded-bl-2xl p-8 pt-10 pb-10',
   },
   {
+    n: '03',
     title: 'Fiscal Architecture',
     description: 'Analyzing budget execution, fiscal responsibility, and public resources allocation mechanisms.',
     Icon: Database,
+    shapeClass: 'rounded-b-[4rem] rounded-t-2xl pt-8 pb-14 px-6 sm:px-8',
   },
 ];
 
 export default function MissionVision() {
   return (
-    <section className="relative overflow-hidden bg-white py-14 md:py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-white py-16 md:py-24 lg:py-32 border-b border-slate-100">
+      {/* Background soft gradients */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full bg-neutral/40 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 right-0 w-[30rem] h-[30rem] rounded-full bg-secondary/[0.02] blur-3xl pointer-events-none -z-10" />
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid gap-10 md:gap-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] lg:items-stretch">
-          <div className="max-w-3xl pt-1 lg:pt-8 flex flex-col justify-between h-full">
-            <div>
-              <div className="mb-8 flex items-center gap-4">
+        
+        {/* Top Row: Typography and Structural Gap */}
+        <div className="grid gap-10 lg:grid-cols-[1.35fr_0.85fr] items-stretch">
+          
+          {/* Left Column - Philosophy Text */}
+          <div className="flex flex-col justify-center">
+            <Reveal delay={0}>
+              <div className="mb-6 flex items-center gap-3.5">
                 <div className="flex items-center gap-1">
-                  <span className="h-[3px] w-[3px] rounded-full bg-primary" />
-                  <span className="h-[1px] w-8 bg-gradient-to-r from-primary to-transparent" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-tertiary animate-pulse" />
+                  <span className="h-[1px] w-8 bg-gradient-to-r from-tertiary to-transparent" />
                 </div>
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.35em] text-primary">Core Philosophy</p>
+                <p className="text-[0.68rem] font-bold uppercase tracking-[0.35em] text-tertiary">Core Philosophy</p>
               </div>
+            </Reveal>
 
-              <h3 className="font-heading text-[1.6rem] leading-[1.18] tracking-tight text-secondary sm:text-[2.2rem] md:text-[3.25rem]">
-                Democracy does not run on sentiment. <br />
-                It runs on <span className="italic text-primary font-light">structure</span>.
+            <Reveal delay={100}>
+              <h3 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] tracking-tight text-primary font-bold">
+                Democracy does not run on sentiment. <br className="hidden sm:inline" />
+                It runs on <span className="relative inline-block font-playfair italic font-normal bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent pb-1">structure.</span>
               </h3>
+            </Reveal>
 
-              <p className="mt-6 max-w-2xl text-[0.95rem] md:text-[1.05rem] leading-[1.75] md:leading-[1.8] text-slate-700">
-                Across campuses, civil society, and party ecosystems, engagement is rising— but structured understanding of legislative design, fiscal process, and administrative architecture remains uneven. When discourse detaches from structure, accountability becomes personality-driven rather than process-driven.
+            <Reveal delay={200}>
+              <p className="mt-6 text-[0.98rem] md:text-[1.05rem] leading-[1.8] text-slate-600">
+                Across campuses, civil society, and party ecosystems, engagement is rising—but structured understanding of <span className="font-semibold text-primary">legislative design</span>, <span className="font-semibold text-primary">fiscal process</span>, and <span className="font-semibold text-primary">administrative architecture</span> remains uneven. When discourse detaches from structure, <span className="font-semibold text-primary">accountability</span> becomes personality-driven rather than process-driven.
               </p>
-            </div>
-
-            <div className="mt-8 md:mt-10 rounded-t-[2rem] md:rounded-t-[3rem] rounded-b-[1rem] border border-slate-100 bg-neutral/40 p-5 sm:p-6 md:p-10 relative overflow-hidden group hover:border-primary/30 transition-colors duration-700">
-              <div className="absolute top-0 right-0 w-32 h-32 -mr-12 -mt-12 rounded-full border border-primary/15 group-hover:scale-[1.8] transition-transform duration-1000 ease-in-out" />
-              <div className="absolute top-0 right-0 w-44 h-44 -mr-16 -mt-16 rounded-full border border-primary/10 group-hover:scale-[1.8] transition-transform duration-1000 delay-75 ease-in-out" />
-              <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary">The Structural Gap</p>
-              <p className="mt-3 md:mt-4 max-w-2xl text-[0.92rem] md:text-[1rem] leading-[1.7] md:leading-[1.8] text-slate-700">
-                DOCK exists to strengthen structural understanding in public life. Our objective is a cultural shift: investing in a generation that values structure as much as outcome, ensuring advocacy aligns with constitutional frameworks.
-              </p>
-            </div>
+            </Reveal>
           </div>
 
-          <div className="relative mt-4 md:mt-8 lg:mt-0 p-2 rounded-t-[7rem] sm:rounded-t-[9rem] md:rounded-t-[12rem] rounded-b-[1.25rem] md:rounded-b-[2rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(13,21,36,0.04)] h-full flex flex-col">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-            <div className="absolute top-[-3px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rotate-45 bg-primary/50"></div>
+          {/* Right Column - The Structural Gap Card */}
+          <Reveal delay={300} className="flex h-full">
+            <div className="w-full rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-2xl rounded-br-2xl border border-slate-900 bg-gradient-to-br from-primary via-slate-950 to-primary p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden group hover:border-secondary/40 hover:shadow-[0_20px_40px_rgba(2,6,54,0.25)] transition-all duration-500 min-h-[260px]">
+              {/* SVG Blueprint Grid Background */}
+              <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay">
+                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="card-grid-gap" width="28" height="28" patternUnits="userSpaceOnUse">
+                      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="white" strokeWidth="0.75" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#card-grid-gap)" />
+                </svg>
+              </div>
+              {/* Glowing radial background */}
+              <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-secondary/20 blur-3xl group-hover:scale-150 transition-transform duration-1000 ease-in-out pointer-events-none" />
 
-            <div className="rounded-t-[6.5rem] sm:rounded-t-[8rem] md:rounded-t-[11.5rem] rounded-b-[1rem] md:rounded-b-[1.5rem] border border-slate-50 px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8 md:pb-10 bg-neutral/30 flex-1 flex flex-col justify-between">
-              <div className="space-y-6 sm:space-y-8 md:space-y-10">
-                {visionPoints.map((point) => (
-                  <div
-                    key={point.title}
-                    className="group flex gap-3.5 sm:gap-4 md:gap-5 border-b border-slate-100 pb-6 sm:pb-7 md:pb-10 last:border-0 last:pb-0"
-                  >
-                    <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-white text-primary transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/[0.06]">
-                      <point.Icon className="h-4 w-4 md:h-5 md:w-5 stroke-[1.5]" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading text-[1.05rem] sm:text-[1.15rem] md:text-[1.25rem] font-normal tracking-wide text-secondary group-hover:text-primary transition-colors duration-300">{point.title}</h4>
-                      <p className="mt-1.5 sm:mt-2 text-[0.9rem] md:text-[0.95rem] leading-[1.6] md:leading-[1.7] text-slate-600">{point.description}</p>
-                    </div>
-                  </div>
-                ))}
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary hover:text-secondary transition-colors"
-                >
-                  Learn more about us <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-[10px] font-bold text-white tracking-wider uppercase border border-white/10">
+                  The Structural Gap
+                </span>
+                <p className="mt-5 text-sm md:text-[0.95rem] leading-[1.75] text-slate-300 font-light">
+                  DOCK exists to strengthen structural understanding in public life. Our objective is a cultural shift: investing in a generation that values <span className="text-white font-medium underline decoration-tertiary/60 decoration-2 underline-offset-4">structure as much as outcome</span>, ensuring advocacy aligns with constitutional frameworks.
+                </p>
               </div>
             </div>
-          </div>
+          </Reveal>
+
         </div>
+
+        {/* Bottom Row: The Three Pillars Grid */}
+        <div className="mt-16 md:mt-24 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {visionPoints.map((point, i) => (
+            <Reveal key={point.title} delay={i * 100 + 400}>
+              <div className={`group relative flex flex-col justify-between h-full border border-slate-100 bg-neutral/20 backdrop-blur-sm shadow-[0_8px_30px_rgba(13,21,36,0.01)] transition-all duration-500 hover:bg-white hover:border-slate-200 hover:shadow-[0_20px_45px_rgba(13,21,36,0.06)] ${point.shapeClass}`}>
+                
+                {/* Watermark Number */}
+                <span className="absolute right-8 bottom-6 text-6xl font-heading font-black tracking-tight text-slate-200/30 select-none pointer-events-none group-hover:text-tertiary/10 transition-colors duration-500">
+                  {point.n}
+                </span>
+
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    {/* Icon Wrap */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-slate-200/80 text-slate-500 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                      <point.Icon className="h-5.5 w-5.5 stroke-[1.5] transition-transform duration-500 group-hover:rotate-[8deg]" />
+                    </div>
+
+                    <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60">
+                      Pillar {point.n}
+                    </p>
+                    
+                    <h4 className="mt-2 font-heading text-[1.2rem] font-bold tracking-tight text-primary group-hover:text-tertiary transition-colors duration-300">
+                      {point.title}
+                    </h4>
+                    
+                    <p className="mt-3 text-[0.88rem] leading-[1.65] text-slate-500 group-hover:text-slate-600 transition-colors duration-300">
+                      {point.description}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Centered CTA Link */}
+        <div className="mt-14 text-center">
+          <Reveal delay={800}>
+            <Link
+              href="/about"
+              className="group/link inline-flex items-center gap-3 rounded-full border border-slate-200 px-6 py-3 text-xs font-bold tracking-widest uppercase text-primary transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-sm"
+            >
+              <span>Learn more about us</span>
+              <span className="flex items-center justify-center bg-primary/5 text-primary rounded-full w-6 h-6 group-hover/link:bg-primary group-hover/link:text-white transition-all duration-300">
+                <ArrowRight className="h-3 w-3 stroke-[2.5] transition-transform duration-300 group-hover/link:translate-x-0.5" />
+              </span>
+            </Link>
+          </Reveal>
+        </div>
+
       </div>
     </section>
   );
